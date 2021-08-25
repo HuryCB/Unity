@@ -53,11 +53,14 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Collidable.cs" />
+    <Compile Include="Assets\Script\Collectable.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\CameraMotor.cs" />
-    <Compile Include="Assets\Script\Collidable.cs" />
     <Compile Include="Assets\Script\Chest.cs" />
-    <Compile Include="Assets\Script\Collectable.cs" />
+    <Compile Include="Assets\Script\Portal.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\FloatingText.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
