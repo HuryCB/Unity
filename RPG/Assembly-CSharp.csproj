@@ -57,10 +57,11 @@
     <Compile Include="Assets\Script\Collectable.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\CameraMotor.cs" />
-    <Compile Include="Assets\Script\Chest.cs" />
     <Compile Include="Assets\Script\Portal.cs" />
-    <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\FloatingText.cs" />
+    <Compile Include="Assets\Script\Chest.cs" />
+    <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\FloatingTextManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

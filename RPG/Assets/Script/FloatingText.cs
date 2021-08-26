@@ -36,5 +36,7 @@ public class FloatingText
         {
             Hide();
         }
+
+        go.transform.position += motion * Time.deltaTime;
     }
 }
