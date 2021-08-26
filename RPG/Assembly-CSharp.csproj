@@ -54,14 +54,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Collidable.cs" />
+    <Compile Include="Assets\Script\Fighter.cs" />
     <Compile Include="Assets\Script\Collectable.cs" />
     <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Script\Weapon.cs" />
+    <Compile Include="Assets\Script\Enemy.cs" />
     <Compile Include="Assets\Script\CameraMotor.cs" />
     <Compile Include="Assets\Script\Portal.cs" />
     <Compile Include="Assets\Script\FloatingText.cs" />
     <Compile Include="Assets\Script\Chest.cs" />
+    <Compile Include="Assets\Script\Damage.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\FloatingTextManager.cs" />
+    <Compile Include="Assets\Script\Mover.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
