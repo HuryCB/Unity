@@ -44,15 +44,10 @@ public class GameManager : MonoBehaviour
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
-    public void SaveState()
-    {
 
-    }
-    public void LoadState(Scene s, LoadSceneMode mode)
-    {
-       
-    }
-    /*
+    
+    
+    
     public void SaveState( )
     {
         string s = "";
@@ -63,8 +58,8 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetString("SaveState", s);
     }
 
-    public void LoadState()
-    {
+    public void LoadState(Scene s, LoadSceneMode mode)
+{
         if (!PlayerPrefs.HasKey("SaveState"))
         {
             return;
@@ -76,5 +71,5 @@ public class GameManager : MonoBehaviour
         //change the weapon level
 
     }
-    */
+    
 }
