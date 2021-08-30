@@ -45,11 +45,11 @@ TagManager:
   - name: Floor
     uniqueID: 203435799
     locked: 0
-  - name: npc
-    uniqueID: 1484344237
-    locked: 0
   - name: Interactable
     uniqueID: 3027091175
+    locked: 0
+  - name: npc
+    uniqueID: 1484344237
     locked: 0
   - name: Weapon
     uniqueID: 463900427

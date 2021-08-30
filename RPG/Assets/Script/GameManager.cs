@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public int experience;
     public GameObject hud;
     public GameObject menu;
+    public Animator deathMenuAnimator;
 
     //Save State
     /*
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
      * int weapon level
      * 
      */
-
+    
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
@@ -162,5 +163,13 @@ public class GameManager : MonoBehaviour
     public void OnSceneLoaded(Scene s, LoadSceneMode mode)
     {
         player.transform.position = GameObject.Find("SpawnPoint").transform.position;
+    }
+
+    //death menu and respawn
+    public void Respawn()
+    {
+        deathMenuAnimator.SetTrigger("Hide");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+        player.Respawn();
     }
 }
