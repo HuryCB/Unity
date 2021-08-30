@@ -6,12 +6,17 @@ public class Player : Mover
 {
     private SpriteRenderer spriteRender;
 
+    protected override void ReceiveDamage(Damage dmg)
+    {
+        base.ReceiveDamage(dmg);
+        GameManager.instance.OnHitpoitChange();
+    }
     protected override void Start()
     {
         base.Start();
         spriteRender = GetComponent<SpriteRenderer>();
 
-        DontDestroyOnLoad(gameObject);
+       
     }
     private void FixedUpdate()
     {
@@ -52,6 +57,7 @@ public class Player : Mover
         {
             hitpoint = maxHitpoint;
         }
-        GameManager.instance.ShowText("+" + healingAmount.ToString() + "hp", 25, Color.green, transform.position, Vector3.up * 30, 1.0f);    
+        GameManager.instance.ShowText("+" + healingAmount.ToString() + "hp", 25, Color.green, transform.position, Vector3.up * 30, 1.0f);
+        GameManager.instance.OnHitpoitChange();
     }
 }

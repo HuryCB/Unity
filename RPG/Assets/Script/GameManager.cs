@@ -14,11 +14,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             Destroy(player.gameObject);
             Destroy(floatingTextManager.gameObject);
+            Destroy(hud);
+            Destroy(menu);
             return;
         }
         instance = this;
         SceneManager.sceneLoaded += LoadState;
-        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     //resources
     public List<Sprite> playerSprites;
@@ -29,9 +31,11 @@ public class GameManager : MonoBehaviour
     public Player player;
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
-
+    public RectTransform hitpointBar;
     public int pesos;
     public int experience;
+    public GameObject hud;
+    public GameObject menu;
 
     //Save State
     /*
@@ -66,6 +70,12 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+    //HitPoint Bar
+    public void OnHitpoitChange()
+    {
+        float ratio = (float)player.hitpoint / (float)player.maxHitpoint;
+        hitpointBar.localScale = new Vector3(1, ratio, 1);
+    }
     private void Update()
     {
         GetCurrentLevel();
@@ -115,6 +125,7 @@ public class GameManager : MonoBehaviour
     public void OnLevelUp()
     {
         player.OnLevelUp();
+        OnHitpoitChange();
     }
     public void SaveState( )
     {
@@ -128,6 +139,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadState(Scene s, LoadSceneMode mode)
 {
+        SceneManager.sceneLoaded -= LoadState;
         if (!PlayerPrefs.HasKey("SaveState"))
         {
             return;
@@ -144,8 +156,11 @@ public class GameManager : MonoBehaviour
         //change the weapon level
         weapon.SetWeaponLevel(int.Parse(data[3]));
 
-        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
+       
     }
     
-  
+    public void OnSceneLoaded(Scene s, LoadSceneMode mode)
+    {
+        player.transform.position = GameObject.Find("SpawnPoint").transform.position;
+    }
 }
