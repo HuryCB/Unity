@@ -54,6 +54,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\CameraController.cs" />
+    <Compile Include="Assets\Collidable.cs" />
+    <Compile Include="Assets\Chest.cs" />
+    <Compile Include="Assets\Collectable.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

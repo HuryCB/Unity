@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Blocking
+  - Npc
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 894182899
+    locked: 0
+  - name: Interactable
+    uniqueID: 2090133499
+    locked: 0
+  - name: Npc
+    uniqueID: 768617811
+    locked: 0
+  - name: Wall
+    uniqueID: 1024471223
     locked: 0
