@@ -25,6 +25,7 @@ public class Weapon : Collidable
         anim = GetComponent<Animator>();
     }
 
+
     protected override void Update()
     {
         base.Update();
