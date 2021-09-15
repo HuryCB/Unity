@@ -1,27 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class Enemy : Interactable
+public class Enemy : Npc
 {
     Player player;
     public int attackDamage = 5;
+    
+    public string objectName = "Enemy";
+  
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
+        objectName = "Enemy";
         player = GameObject.Find("Player").GetComponent<Player>();
+        text.SetText(objectName);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Interact();
-            
+            //Interact();
+            HitPlayer();
         }
     }
-    public override void Interact()
+   
+
+    public void HitPlayer()
     {
-        base.Interact();
         player.Damage(attackDamage);
     }
 }

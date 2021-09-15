@@ -8,8 +8,9 @@ public class HealthPotion : Interactable
     Player player;
     // public Player owner;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         player = GameObject.Find("Player").GetComponent<Player>();
         // player = gameObject.GetComponent<Player>();
     }

@@ -3,30 +3,27 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Npc
 {
 
     private Vector3 moveDelta;
     public Item holding;
     private Rigidbody2D rigidBody;
-    public float health = 100f;
-    public float maxHealth = 100f;
-    public float speed = 1;
-    public HealthBar healthBar;
-    public TextMeshPro text;
     
-
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
         rigidBody = GetComponent<Rigidbody2D>();
-        healthBar = GetComponentInChildren<HealthBar>();
-        text = GetComponentInChildren<TextMeshPro>();
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       
+       if(collision.gameObject.tag == "Enemy")
+        {
+            
+        }
     }
  
     private void Update()
@@ -37,7 +34,7 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 holding.UseItem();
-
+               // Atack();
             }
         }
        
@@ -68,36 +65,7 @@ public class Player : MonoBehaviour
 
     }
 
-   public void Heal(int healAmount)
-    {
-        if(health + healAmount > maxHealth)
-        {
-            health = maxHealth;
-        }
-        else
-        {
-            health += healAmount;
-        }
-        CorrectHealthBar();
-    }
+   
 
-    public void Damage(int damage)
-    {
-        if(health - damage > 0)
-        {
-            health -= damage;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-        CorrectHealthBar();
-    }
-
-    public void CorrectHealthBar()
-    {
-        float xScale = health / maxHealth;
-        healthBar.transform.localScale = new Vector3(Mathf.Abs(xScale), 1, 0);
-        text.text = health.ToString();
-    }
+    
 }
