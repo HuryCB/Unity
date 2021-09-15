@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
     public List<Sprite> weaponSprites;
     public List<int> weaponPrices;
     public List<int> xpTable;
-
+    public GameObject textPrefab;
     //references
     public Player player;
     public FloatingTextManager floatingTextManager;
@@ -30,6 +31,15 @@ public class GameManager : MonoBehaviour
     {
         floatingTextManager.Show(msg, 25, Color.white, position, new Vector3(1,1,0), 0.0f);
     }
+    
+    void Text(string text, Vector3 position)
+    {
+        if (textPrefab)
+        {
+            GameObject prefab = Instantiate(textPrefab, position, Quaternion.identity);
+            prefab.GetComponentInChildren<TextMesh>().text = text;
+        }
+    }
     public void SaveState() 
     {
 
@@ -38,5 +48,13 @@ public class GameManager : MonoBehaviour
     public void LoadState()
     {
          
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey("r"))
+        {
+            SceneManager.LoadScene("Main");
+        }
     }
 }

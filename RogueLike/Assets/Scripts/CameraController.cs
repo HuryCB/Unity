@@ -7,13 +7,7 @@ public class CameraController : MonoBehaviour
     public Transform lookAt;
     public float boundX = 0.15f;
     public float boundY = 0.06f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         Vector3 delta = Vector3.zero;

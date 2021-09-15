@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6582716665334331186}
   - component: {fileID: 1967373006005789461}
   - component: {fileID: 4931527902391157668}
+  - component: {fileID: 2905138867267959974}
   m_Layer: 0
   m_Name: health_small_potion
   m_TagString: Untagged
@@ -93,5 +94,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d2514a288e4cb14d982087012bec816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2905138867267959974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3539990292970347627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfac1b93ef821bd4b8de9860515ad988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

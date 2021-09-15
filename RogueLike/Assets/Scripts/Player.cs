@@ -1,41 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private BoxCollider2D boxCollider;
+
     private Vector3 moveDelta;
-    private RaycastHit2D hit;
     public Item holding;
+    private Rigidbody2D rigidBody;
+    public float health = 100f;
+    public float maxHealth = 100f;
+    public float speed = 1;
+    public HealthBar healthBar;
+    public TextMeshPro text;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
-
+        rigidBody = GetComponent<Rigidbody2D>();
+        healthBar = GetComponentInChildren<HealthBar>();
+        text = GetComponentInChildren<TextMeshPro>();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       
+    }
+ 
     private void Update()
     {
-        //if (Input.GetKey(KeyCode.Mouse0))
-        if (Input.GetMouseButtonDown(0))
+        if(holding != null)
         {
-            holding.UseItem();
-            Debug.Log("Teste");
+            holding.transform.localPosition = new Vector3(0.16f, 0, 0);
+            if (Input.GetMouseButtonDown(0))
+            {
+                holding.UseItem();
+
+            }
         }
+       
     }
-    // Update is called once per frame
+
     void FixedUpdate()
     {
-
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
         moveDelta = new Vector3(x, y, 0);
 
-        //swap sprite direction, wether you're going right or left
         if (moveDelta.x > 0)
         {
             transform.localScale = Vector3.one;
@@ -44,22 +58,46 @@ public class Player : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        //Make sure we can move in this direciton, by casting a box there first
-        //check with what is going to collide with
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, moveDelta.y), Mathf.Abs(moveDelta.y * Time.deltaTime), LayerMask.GetMask("Npc", "Blocking"));
-        //check if can move
-        if (hit.collider == null)
         {
-            transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
+            //transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
+            rigidBody.MovePosition(transform.position + moveDelta * Time.deltaTime * speed);
         }
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(moveDelta.x, 0), Mathf.Abs(moveDelta.x * Time.deltaTime), LayerMask.GetMask("Npc", "Blocking"));
-        //check if can move
-        if (hit.collider == null)
         {
-            transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
+            //transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
         }
 
     }
 
-   
+   public void Heal(int healAmount)
+    {
+        if(health + healAmount > maxHealth)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health += healAmount;
+        }
+        CorrectHealthBar();
+    }
+
+    public void Damage(int damage)
+    {
+        if(health - damage > 0)
+        {
+            health -= damage;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        CorrectHealthBar();
+    }
+
+    public void CorrectHealthBar()
+    {
+        float xScale = health / maxHealth;
+        healthBar.transform.localScale = new Vector3(Mathf.Abs(xScale), 1, 0);
+        text.text = health.ToString();
+    }
 }

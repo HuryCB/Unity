@@ -23,6 +23,7 @@ public class FloatingText : MonoBehaviour
     {
         active = false;
         go.SetActive(active);
+        
     }
 
     public void UpdateFloatingText()
@@ -35,6 +36,6 @@ public class FloatingText : MonoBehaviour
             Hide();
         }
 
-        go.transform.position += motion * Time.deltaTime;
+        //go.transform.position += motion * Time.deltaTime;
     }
 }
