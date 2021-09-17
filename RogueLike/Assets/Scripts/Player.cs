@@ -9,12 +9,14 @@ public class Player : Npc
     private Vector3 moveDelta;
     public Item holding;
     private Rigidbody2D rigidBody;
+    //private GameObject parent;
     
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
         rigidBody = GetComponent<Rigidbody2D>();
+        //parent = GetComponentInParent<>
         
     }
 
@@ -36,6 +38,7 @@ public class Player : Npc
                 holding.UseItem();
                // Atack();
             }
+            
         }
        
     }
@@ -50,13 +53,15 @@ public class Player : Npc
         if (moveDelta.x > 0)
         {
             transform.localScale = Vector3.one;
+            //transform.parent.localScale = Vector3.one;
         }
         else if (moveDelta.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            //transform.parent.localScale = new Vector3(-1, 1, 1);
         }
         {
-            //transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
+           // transform.Translate(0, moveDelta.y * Time.deltaTime, 0);
             rigidBody.MovePosition(transform.position + moveDelta * Time.deltaTime * speed);
         }
         {

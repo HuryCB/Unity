@@ -21,6 +21,7 @@ public class LocalScale : MonoBehaviour
         {
             transform.localScale = new Vector3(startScale.x, startScale.y, startScale.z);
         }
-        
+
+        //Debug.Log(parentX.ToString());
     }
 }

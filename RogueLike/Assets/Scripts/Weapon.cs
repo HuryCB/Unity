@@ -21,26 +21,31 @@ public class Weapon : Item
     {
         //base.UseItem();
         anim.SetTrigger("Swing");
+       // anim.SetBool("WillSwing", false);
     }
 
     private void LateUpdate()
     {
         if (owner != null)
         {
+            //PointToMouse();
             Vector3 ownerPos = owner.transform.position;
+           // transform.position = ownerPos;
+            transform.parent.localScale = new Vector3 (transform.parent.localScale.x , owner.transform.localScale.x, transform.parent.localScale.z);
             
-           // transform.localPosition = new Vector3 (ownerPos.x * owner.transform.localScale.x, ownerPos.y, ownerPos.z);
-            //transform.localScale.x = owner.transform.localScale.x;
+            //transform.parent.localScale = owner.transform.localScale;
+            //transform.parent.localPosition.z =
             //Debug.Log(owner.transform.localScale.x.ToString());
             //Debug.Log(ownerPos.x.ToString());
             //Debug.Log(ownerPos.x * owner.transform.localScale.x.ToString());
-            Debug.Log(transform.position.ToString());
+            //anim.Set
+
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("colliding");
+        //Debug.Log("colliding");
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().Damage(damage);
@@ -49,6 +54,13 @@ public class Weapon : Item
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("triggering");
+        //Debug.Log("triggering");
     }
+
+    //private void PointToMouse()
+    //{
+    //    var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+    //    var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+    //    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    //}
 }
