@@ -49,6 +49,7 @@ public class Weapon : Item
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().Damage(damage);
+            //collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(50, 50));
         }
     }
 
