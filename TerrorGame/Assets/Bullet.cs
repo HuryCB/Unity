@@ -7,7 +7,8 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     float horizontal;
     float vertical;
-
+    public GameObject blood;
+    Transform bulletPosition;
     Rigidbody2D rb;
     public float speed = 40f;
     public float lifeTime = 5f;
@@ -15,7 +16,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        bulletPosition = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -35,6 +36,7 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter2D (Collider2D hitInfo) {
         if(hitInfo.tag != "activateBox")
         {
+            Instantiate(blood);
             Destroy(gameObject);
         }
     }
@@ -43,6 +45,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag != "activateBox")
         {
+            Instantiate(blood, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
