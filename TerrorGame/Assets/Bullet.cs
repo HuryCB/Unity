@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     Rigidbody2D rb;
     public float speed = 40f;
     public float lifeTime = 5f;
+    public float damage = 5;
 
     void Start()
     {
@@ -34,19 +35,31 @@ public class Bullet : MonoBehaviour
     }
 
     void OnTriggerEnter2D (Collider2D hitInfo) {
-        if(hitInfo.tag != "activateBox")
+        if (hitInfo.tag == "activateBox") return;
+        
+        if(hitInfo.tag == "enemy")
         {
-            Instantiate(blood);
-            Destroy(gameObject);
+           GameObject enemy = hitInfo.gameObject;
+            Instantiate(blood, enemy.transform.position, enemy.transform.rotation);
+            
         }
+
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "activateBox")
+        if (collision.gameObject.tag == "activateBox") return;
+        
+        if(collision.gameObject.tag == "enemy")
         {
-            Instantiate(blood, transform.position, transform.rotation);
-            Destroy(gameObject);
+            GameObject enemy = collision.gameObject;
+            GameObject bloodCopy = Instantiate(blood);
+            bloodCopy.transform.position = enemy.transform.position;
         }
+        
+        Destroy(gameObject);
+        
     }
+
 }

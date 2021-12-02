@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Npc
 {
     Rigidbody2D rb;
-
+    
     AudioSource stepSound;
     float horizontal;
     float vertical;
@@ -27,10 +27,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         move();
        
         checkRun();
+
+       
     }
+
+   
 
     private void move()
     {

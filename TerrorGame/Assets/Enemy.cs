@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Npc
 {
     AudioSource basicSound;
     public GameObject blood;
@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+        healthControl();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -37,8 +38,8 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject.tag == "bullet")
         {
-            Debug.Log("collision");
-           
+            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+            takeDamage(bullet.damage);
         }
     }
 
@@ -48,6 +49,20 @@ public class Enemy : MonoBehaviour
         {
             Debug.Log("trigger");
         
+        }
+    }
+
+    private void takeDamage(float damage)
+    {
+        currentLife -= damage;
+    }
+
+    public override void healthControl()
+    {
+        base.healthControl();
+        if(currentLife <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
