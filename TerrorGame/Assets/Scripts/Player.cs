@@ -83,6 +83,20 @@ public class Player : Npc
 
     void OnTriggerStay2D(Collider2D col)
     {
+        switch (col.tag)
+        {
+            case "enemy":
+                if (Input.GetKey(KeyCode.F))
+                {
+                    Cat cat = col.gameObject.GetComponent<Cat>();
+                    cat.ReceiveDamage();
+                    Debug.Log("Gato do Rubens? Morto.");
+                    //col.transform.gameObject
+                    //Destroy(col.transform.gameObject);
+
+                }
+                break;
+        }
         if (col.tag == "door")
         {
             if (Input.GetKey(KeyCode.E)){
@@ -91,5 +105,7 @@ public class Player : Npc
                 
             }
         }
+
+        
     }
 }

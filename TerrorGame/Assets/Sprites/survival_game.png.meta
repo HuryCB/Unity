@@ -191,6 +191,9 @@ TextureImporter:
   - first:
       213: 5630457742400479915
     second: survival_game_62
+  - first:
+      213: 7494236092945721360
+    second: meat
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1590,7 +1593,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1598,6 +1601,27 @@ TextureImporter:
       bones: []
       spriteID: 1efab165d18feef70800000000000000
       internalID: 9218578292156379105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: meat
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018e0f63500e00860800000000000000
+      internalID: 7494236092945721360
       vertices: []
       indices: 
       edges: []
