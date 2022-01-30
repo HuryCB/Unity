@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 9218578292156379105
-    second: survival_game_0
+    second: Rubens'sCat
   - first:
       213: 1784998601430351554
     second: survival_game_1
@@ -1577,6 +1577,27 @@ TextureImporter:
       bones: []
       spriteID: ba2e0aa3c77632e40800000000000000
       internalID: 5630457742400479915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rubens'sCat
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1efab165d18feef70800000000000000
+      internalID: 9218578292156379105
       vertices: []
       indices: 
       edges: []
