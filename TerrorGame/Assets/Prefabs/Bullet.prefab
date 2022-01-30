@@ -100,6 +100,7 @@ MonoBehaviour:
   blood: {fileID: 2252297481942370342, guid: 8d8bee534605c7647854cb9f5ad31447, type: 3}
   speed: 30
   lifeTime: 3
+  damage: 15
 --- !u!61 &8347411834368834080
 BoxCollider2D:
   m_ObjectHideFlags: 0
