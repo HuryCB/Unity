@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance = null;
     public AudioSource catDeathSound;
+    public AudioSource backgroundSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +16,11 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Multiple instances of AudioManager");
+           Debug.Log("Multiple instances of AudioManager");
            Destroy(this);
         }
-        catDeathSound = GetComponent<AudioSource>();
+      
+        backgroundSound.Play();
     }
 
     public void CatDeathSound()

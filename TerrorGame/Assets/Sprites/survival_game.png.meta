@@ -4,13 +4,13 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 9218578292156379105
-    second: Rubens'sCat
+    second: survival_game_0
   - first:
       213: 1784998601430351554
     second: survival_game_1
   - first:
       213: -7587068793337030939
-    second: campfire_1
+    second: survival_game_2
   - first:
       213: -3816437288756418070
     second: survival_game_3
@@ -25,7 +25,7 @@ TextureImporter:
     second: survival_game_6
   - first:
       213: -8052125130073054155
-    second: campfire_2
+    second: survival_game_7
   - first:
       213: -4819330174426110563
     second: survival_game_8
@@ -40,7 +40,7 @@ TextureImporter:
     second: survival_game_11
   - first:
       213: 9119168088162055667
-    second: campfire_3
+    second: survival_game_12
   - first:
       213: 4221116523858220483
     second: survival_game_13
@@ -58,7 +58,7 @@ TextureImporter:
     second: survival_game_17
   - first:
       213: 1058049384274060131
-    second: campfire_4
+    second: survival_game_18
   - first:
       213: -6040434493401663086
     second: survival_game_19
@@ -67,7 +67,7 @@ TextureImporter:
     second: survival_game_20
   - first:
       213: -5743533451702739586
-    second: survival_game_21
+    second: tool_knife
   - first:
       213: 7256624514093732720
     second: survival_game_22
@@ -88,7 +88,7 @@ TextureImporter:
     second: survival_game_27
   - first:
       213: -4627330869437122782
-    second: stone_campfire_1
+    second: survival_game_28
   - first:
       213: 4665647302722908298
     second: survival_game_29
@@ -115,10 +115,10 @@ TextureImporter:
     second: survival_game_36
   - first:
       213: 6243195842624614537
-    second: player_wilson
+    second: campfire_stone_0
   - first:
       213: -8047109423055699822
-    second: stone_campfire_2
+    second: survival_game_38
   - first:
       213: 288434608527484763
     second: survival_game_39
@@ -130,7 +130,7 @@ TextureImporter:
     second: survival_game_41
   - first:
       213: 810570163660546877
-    second: stone_campfire_3
+    second: survival_game_42
   - first:
       213: 5070674356213571712
     second: survival_game_43
@@ -142,13 +142,13 @@ TextureImporter:
     second: survival_game_45
   - first:
       213: -3347495428937769531
-    second: survival_game_46
+    second: player_wilson
   - first:
       213: 7054512127490714435
-    second: survival_game_47
+    second: campfire_stone_1
   - first:
       213: 3736998136037916283
-    second: object_umbrella
+    second: survival_game_48
   - first:
       213: 8206206150307221050
     second: survival_game_49
@@ -163,16 +163,16 @@ TextureImporter:
     second: survival_game_52
   - first:
       213: -6639384846759535439
-    second: survival_game_53
+    second: campfire_stone_2
   - first:
       213: 2752506025516673887
-    second: stone_campfire_4
+    second: survival_game_54
   - first:
       213: 4970329194415074473
-    second: stats_hunger
+    second: survival_game_55
   - first:
       213: 5941900727436169171
-    second: npc_pig
+    second: survival_game_56
   - first:
       213: 6326358305233744200
     second: survival_game_57
@@ -181,19 +181,67 @@ TextureImporter:
     second: survival_game_58
   - first:
       213: -1102536539613359396
-    second: stats_health
+    second: survival_game_59
   - first:
       213: -5117841029771358225
     second: survival_game_60
   - first:
       213: 136859793775339358
-    second: stats_sanity
+    second: survival_game_61
   - first:
       213: 5630457742400479915
     second: survival_game_62
   - first:
       213: 7494236092945721360
-    second: meat
+    second: survival_game_63
+  - first:
+      213: -3889317328582571599
+    second: survival_game_64
+  - first:
+      213: -5549536507221368974
+    second: campfire_stone_3
+  - first:
+      213: -4180168373416916697
+    second: status_hunger
+  - first:
+      213: -5376367304569021143
+    second: pigman
+  - first:
+      213: -8175275608833303765
+    second: pig_meat
+  - first:
+      213: -7098574590894094454
+    second: survival_game_69
+  - first:
+      213: -4276781989591007310
+    second: status_health
+  - first:
+      213: -6941009811295560511
+    second: Rubens'sCat
+  - first:
+      213: 304280454167930070
+    second: cat_meat
+  - first:
+      213: 7312943136065856625
+    second: survival_game_73
+  - first:
+      213: 329078290920401019
+    second: status_sanity
+  - first:
+      213: 6755633537581411600
+    second: survival_game_75
+  - first:
+      213: -2315742248020230377
+    second: survival_game_76
+  - first:
+      213: -8025759389033018172
+    second: survival_game_77
+  - first:
+      213: 7457860946526716173
+    second: survival_game_78
+  - first:
+      213: -1327124773264833016
+    second: survival_game_79
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -304,7 +352,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: campfire_1
+      name: survival_game_2
       rect:
         serializedVersion: 2
         x: 32
@@ -349,7 +397,7 @@ TextureImporter:
       name: survival_game_4
       rect:
         serializedVersion: 2
-        x: 160
+        x: 64
         y: 264
         width: 16
         height: 16
@@ -370,8 +418,8 @@ TextureImporter:
       name: survival_game_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 248
+        x: 80
+        y: 264
         width: 16
         height: 16
       alignment: 0
@@ -391,8 +439,8 @@ TextureImporter:
       name: survival_game_6
       rect:
         serializedVersion: 2
-        x: 16
-        y: 248
+        x: 96
+        y: 264
         width: 16
         height: 16
       alignment: 0
@@ -409,11 +457,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: campfire_2
+      name: survival_game_7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 248
+        x: 112
+        y: 264
         width: 16
         height: 16
       alignment: 0
@@ -433,8 +481,8 @@ TextureImporter:
       name: survival_game_8
       rect:
         serializedVersion: 2
-        x: 48
-        y: 248
+        x: 128
+        y: 264
         width: 16
         height: 16
       alignment: 0
@@ -454,8 +502,8 @@ TextureImporter:
       name: survival_game_9
       rect:
         serializedVersion: 2
-        x: 160
-        y: 248
+        x: 144
+        y: 264
         width: 16
         height: 16
       alignment: 0
@@ -475,8 +523,8 @@ TextureImporter:
       name: survival_game_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 232
+        x: 160
+        y: 264
         width: 16
         height: 16
       alignment: 0
@@ -496,8 +544,8 @@ TextureImporter:
       name: survival_game_11
       rect:
         serializedVersion: 2
-        x: 16
-        y: 232
+        x: 176
+        y: 264
         width: 16
         height: 16
       alignment: 0
@@ -514,11 +562,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: campfire_3
+      name: survival_game_12
       rect:
         serializedVersion: 2
-        x: 32
-        y: 232
+        x: 192
+        y: 264
         width: 16
         height: 16
       alignment: 0
@@ -538,8 +586,8 @@ TextureImporter:
       name: survival_game_13
       rect:
         serializedVersion: 2
-        x: 48
-        y: 232
+        x: 208
+        y: 264
         width: 16
         height: 16
       alignment: 0
@@ -559,8 +607,8 @@ TextureImporter:
       name: survival_game_14
       rect:
         serializedVersion: 2
-        x: 64
-        y: 232
+        x: 0
+        y: 248
         width: 16
         height: 16
       alignment: 0
@@ -580,8 +628,8 @@ TextureImporter:
       name: survival_game_15
       rect:
         serializedVersion: 2
-        x: 112
-        y: 232
+        x: 16
+        y: 248
         width: 16
         height: 16
       alignment: 0
@@ -601,8 +649,8 @@ TextureImporter:
       name: survival_game_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 216
+        x: 32
+        y: 248
         width: 16
         height: 16
       alignment: 0
@@ -622,8 +670,8 @@ TextureImporter:
       name: survival_game_17
       rect:
         serializedVersion: 2
-        x: 16
-        y: 216
+        x: 48
+        y: 248
         width: 16
         height: 16
       alignment: 0
@@ -640,11 +688,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: campfire_4
+      name: survival_game_18
       rect:
         serializedVersion: 2
-        x: 32
-        y: 216
+        x: 0
+        y: 232
         width: 16
         height: 16
       alignment: 0
@@ -664,8 +712,8 @@ TextureImporter:
       name: survival_game_19
       rect:
         serializedVersion: 2
-        x: 48
-        y: 216
+        x: 16
+        y: 232
         width: 16
         height: 16
       alignment: 0
@@ -685,8 +733,8 @@ TextureImporter:
       name: survival_game_20
       rect:
         serializedVersion: 2
-        x: 64
-        y: 216
+        x: 32
+        y: 232
         width: 16
         height: 16
       alignment: 0
@@ -703,15 +751,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: survival_game_21
+      name: tool_knife
       rect:
         serializedVersion: 2
-        x: 96
-        y: 216
+        x: 48
+        y: 232
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.49770117, y: 0.22879505}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -727,8 +775,8 @@ TextureImporter:
       name: survival_game_22
       rect:
         serializedVersion: 2
-        x: 112
-        y: 216
+        x: 64
+        y: 232
         width: 16
         height: 16
       alignment: 0
@@ -748,8 +796,8 @@ TextureImporter:
       name: survival_game_23
       rect:
         serializedVersion: 2
-        x: 128
-        y: 216
+        x: 96
+        y: 232
         width: 16
         height: 16
       alignment: 0
@@ -769,8 +817,8 @@ TextureImporter:
       name: survival_game_24
       rect:
         serializedVersion: 2
-        x: 144
-        y: 216
+        x: 112
+        y: 232
         width: 16
         height: 16
       alignment: 0
@@ -790,7 +838,7 @@ TextureImporter:
       name: survival_game_25
       rect:
         serializedVersion: 2
-        x: 160
+        x: 0
         y: 216
         width: 16
         height: 16
@@ -811,8 +859,8 @@ TextureImporter:
       name: survival_game_26
       rect:
         serializedVersion: 2
-        x: 0
-        y: 200
+        x: 16
+        y: 216
         width: 16
         height: 16
       alignment: 0
@@ -832,8 +880,8 @@ TextureImporter:
       name: survival_game_27
       rect:
         serializedVersion: 2
-        x: 16
-        y: 200
+        x: 32
+        y: 216
         width: 16
         height: 16
       alignment: 0
@@ -850,11 +898,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stone_campfire_1
+      name: survival_game_28
       rect:
         serializedVersion: 2
-        x: 32
-        y: 200
+        x: 48
+        y: 216
         width: 16
         height: 16
       alignment: 0
@@ -874,8 +922,8 @@ TextureImporter:
       name: survival_game_29
       rect:
         serializedVersion: 2
-        x: 48
-        y: 200
+        x: 64
+        y: 216
         width: 16
         height: 16
       alignment: 0
@@ -895,8 +943,8 @@ TextureImporter:
       name: survival_game_30
       rect:
         serializedVersion: 2
-        x: 64
-        y: 200
+        x: 96
+        y: 216
         width: 16
         height: 16
       alignment: 0
@@ -916,8 +964,8 @@ TextureImporter:
       name: survival_game_31
       rect:
         serializedVersion: 2
-        x: 80
-        y: 200
+        x: 112
+        y: 216
         width: 16
         height: 16
       alignment: 0
@@ -937,8 +985,8 @@ TextureImporter:
       name: survival_game_32
       rect:
         serializedVersion: 2
-        x: 96
-        y: 200
+        x: 128
+        y: 216
         width: 16
         height: 16
       alignment: 0
@@ -958,8 +1006,8 @@ TextureImporter:
       name: survival_game_33
       rect:
         serializedVersion: 2
-        x: 112
-        y: 200
+        x: 144
+        y: 216
         width: 16
         height: 16
       alignment: 0
@@ -979,8 +1027,8 @@ TextureImporter:
       name: survival_game_34
       rect:
         serializedVersion: 2
-        x: 128
-        y: 200
+        x: 160
+        y: 216
         width: 16
         height: 16
       alignment: 0
@@ -1000,7 +1048,7 @@ TextureImporter:
       name: survival_game_35
       rect:
         serializedVersion: 2
-        x: 144
+        x: 0
         y: 200
         width: 16
         height: 16
@@ -1021,7 +1069,7 @@ TextureImporter:
       name: survival_game_36
       rect:
         serializedVersion: 2
-        x: 160
+        x: 16
         y: 200
         width: 16
         height: 16
@@ -1039,11 +1087,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_wilson
+      name: campfire_stone_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 184
+        x: 32
+        y: 200
         width: 16
         height: 16
       alignment: 0
@@ -1060,11 +1108,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stone_campfire_2
+      name: survival_game_38
       rect:
         serializedVersion: 2
-        x: 32
-        y: 184
+        x: 48
+        y: 200
         width: 16
         height: 16
       alignment: 0
@@ -1084,8 +1132,8 @@ TextureImporter:
       name: survival_game_39
       rect:
         serializedVersion: 2
-        x: 48
-        y: 184
+        x: 64
+        y: 200
         width: 16
         height: 16
       alignment: 0
@@ -1105,8 +1153,8 @@ TextureImporter:
       name: survival_game_40
       rect:
         serializedVersion: 2
-        x: 96
-        y: 184
+        x: 80
+        y: 200
         width: 16
         height: 16
       alignment: 0
@@ -1126,8 +1174,8 @@ TextureImporter:
       name: survival_game_41
       rect:
         serializedVersion: 2
-        x: 16
-        y: 168
+        x: 96
+        y: 200
         width: 16
         height: 16
       alignment: 0
@@ -1144,11 +1192,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stone_campfire_3
+      name: survival_game_42
       rect:
         serializedVersion: 2
-        x: 32
-        y: 168
+        x: 112
+        y: 200
         width: 16
         height: 16
       alignment: 0
@@ -1168,8 +1216,8 @@ TextureImporter:
       name: survival_game_43
       rect:
         serializedVersion: 2
-        x: 48
-        y: 168
+        x: 128
+        y: 200
         width: 16
         height: 16
       alignment: 0
@@ -1189,8 +1237,8 @@ TextureImporter:
       name: survival_game_44
       rect:
         serializedVersion: 2
-        x: 64
-        y: 168
+        x: 144
+        y: 200
         width: 16
         height: 16
       alignment: 0
@@ -1210,8 +1258,8 @@ TextureImporter:
       name: survival_game_45
       rect:
         serializedVersion: 2
-        x: 80
-        y: 168
+        x: 160
+        y: 200
         width: 16
         height: 16
       alignment: 0
@@ -1228,11 +1276,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: survival_game_46
+      name: player_wilson
       rect:
         serializedVersion: 2
-        x: 96
-        y: 168
+        x: 16
+        y: 184
         width: 16
         height: 16
       alignment: 0
@@ -1249,11 +1297,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: survival_game_47
+      name: campfire_stone_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 168
+        x: 32
+        y: 184
         width: 16
         height: 16
       alignment: 0
@@ -1270,11 +1318,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: object_umbrella
+      name: survival_game_48
       rect:
         serializedVersion: 2
-        x: 128
-        y: 168
+        x: 48
+        y: 184
         width: 16
         height: 16
       alignment: 0
@@ -1294,8 +1342,8 @@ TextureImporter:
       name: survival_game_49
       rect:
         serializedVersion: 2
-        x: 144
-        y: 168
+        x: 96
+        y: 184
         width: 16
         height: 16
       alignment: 0
@@ -1315,8 +1363,8 @@ TextureImporter:
       name: survival_game_50
       rect:
         serializedVersion: 2
-        x: 160
-        y: 168
+        x: 176
+        y: 184
         width: 16
         height: 16
       alignment: 0
@@ -1336,8 +1384,8 @@ TextureImporter:
       name: survival_game_51
       rect:
         serializedVersion: 2
-        x: 176
-        y: 168
+        x: 192
+        y: 184
         width: 16
         height: 16
       alignment: 0
@@ -1357,7 +1405,7 @@ TextureImporter:
       name: survival_game_52
       rect:
         serializedVersion: 2
-        x: 192
+        x: 16
         y: 168
         width: 16
         height: 16
@@ -1375,11 +1423,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: survival_game_53
+      name: campfire_stone_2
       rect:
         serializedVersion: 2
-        x: 16
-        y: 152
+        x: 32
+        y: 168
         width: 16
         height: 16
       alignment: 0
@@ -1396,11 +1444,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stone_campfire_4
+      name: survival_game_54
       rect:
         serializedVersion: 2
-        x: 32
-        y: 152
+        x: 48
+        y: 168
         width: 16
         height: 16
       alignment: 0
@@ -1417,11 +1465,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stats_hunger
+      name: survival_game_55
       rect:
         serializedVersion: 2
-        x: 48
-        y: 152
+        x: 64
+        y: 168
         width: 16
         height: 16
       alignment: 0
@@ -1438,11 +1486,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_pig
+      name: survival_game_56
       rect:
         serializedVersion: 2
-        x: 64
-        y: 152
+        x: 80
+        y: 168
         width: 16
         height: 16
       alignment: 0
@@ -1462,8 +1510,8 @@ TextureImporter:
       name: survival_game_57
       rect:
         serializedVersion: 2
-        x: 80
-        y: 152
+        x: 96
+        y: 168
         width: 16
         height: 16
       alignment: 0
@@ -1483,8 +1531,8 @@ TextureImporter:
       name: survival_game_58
       rect:
         serializedVersion: 2
-        x: 16
-        y: 136
+        x: 112
+        y: 168
         width: 16
         height: 16
       alignment: 0
@@ -1501,11 +1549,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stats_health
+      name: survival_game_59
       rect:
         serializedVersion: 2
-        x: 48
-        y: 136
+        x: 128
+        y: 168
         width: 16
         height: 16
       alignment: 0
@@ -1525,8 +1573,8 @@ TextureImporter:
       name: survival_game_60
       rect:
         serializedVersion: 2
-        x: 16
-        y: 120
+        x: 144
+        y: 168
         width: 16
         height: 16
       alignment: 0
@@ -1543,11 +1591,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stats_sanity
+      name: survival_game_61
       rect:
         serializedVersion: 2
-        x: 48
-        y: 120
+        x: 160
+        y: 168
         width: 16
         height: 16
       alignment: 0
@@ -1567,8 +1615,8 @@ TextureImporter:
       name: survival_game_62
       rect:
         serializedVersion: 2
-        x: 0
-        y: 264
+        x: 176
+        y: 168
         width: 16
         height: 16
       alignment: 0
@@ -1580,6 +1628,195 @@ TextureImporter:
       bones: []
       spriteID: ba2e0aa3c77632e40800000000000000
       internalID: 5630457742400479915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: survival_game_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1efab165d18feef70800000000000000
+      internalID: 9218578292156379105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: survival_game_63
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 168
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018e0f63500e00860800000000000000
+      internalID: 7494236092945721360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: survival_game_64
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 152
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b980130f7e560ac0800000000000000
+      internalID: -3889317328582571599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: campfire_stone_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 152
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f120b03f51cf2b0800000000000000
+      internalID: -5549536507221368974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: status_hunger
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 152
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7298929030f0df5c0800000000000000
+      internalID: -4180168373416916697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigman
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 152
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d9325fb6e4365b0800000000000000
+      internalID: -5376367304569021143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pig_meat
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 152
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b5392f5269b8e80800000000000000
+      internalID: -8175275608833303765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: survival_game_69
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a87c42af40ccc7d90800000000000000
+      internalID: -7098574590894094454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: status_health
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 136
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfb3a89071d5a4c0800000000000000
+      internalID: -4276781989591007310
       vertices: []
       indices: 
       edges: []
@@ -1599,14 +1836,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1efab165d18feef70800000000000000
-      internalID: 9218578292156379105
+      spriteID: 1cc1a370a549caf90800000000000000
+      internalID: -6941009811295560511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: meat
+      name: cat_meat
       rect:
         serializedVersion: 2
         x: 80
@@ -1614,14 +1851,161 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 018e0f63500e00860800000000000000
-      internalID: 7494236092945721360
+      spriteID: 6d426cef575093400800000000000000
+      internalID: 304280454167930070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: survival_game_73
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17426df590bcc7560800000000000000
+      internalID: 7312943136065856625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: status_sanity
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b786a9946fe119400800000000000000
+      internalID: 329078290920401019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: survival_game_75
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 120
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d6148d8e4d0cd50800000000000000
+      internalID: 6755633537581411600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: survival_game_76
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 104
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fb36bd1b4dcdfd0800000000000000
+      internalID: -2315742248020230377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: survival_game_77
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 104
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc4ee3ab56ce9090800000000000000
+      internalID: -8025759389033018172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: survival_game_78
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 104
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d01cbf57405af7760800000000000000
+      internalID: 7457860946526716173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: survival_game_79
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 56
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806cde4dc0b159de0800000000000000
+      internalID: -1327124773264833016
       vertices: []
       indices: 
       edges: []

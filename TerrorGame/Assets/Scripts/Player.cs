@@ -8,6 +8,7 @@ public class Player : Npc
     Rigidbody2D rb;
     
     AudioSource stepSound;
+    public GameObject atkRange;
     float horizontal;
     float vertical;
 
@@ -32,10 +33,16 @@ public class Player : Npc
        
         checkRun();
 
-       
+        checkMouseInput();
     }
 
-   
+    private void checkMouseInput()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+
+        }
+    }
 
     private void move()
     {
