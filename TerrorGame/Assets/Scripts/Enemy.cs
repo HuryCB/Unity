@@ -5,20 +5,20 @@ using UnityEngine;
 public class Enemy : Npc
 {
     public AudioSource basicSound;
-    public GameObject blood;
-    private GameObject Player;
-    private bool following;
+    //public GameObject blood;
+    protected GameObject Player;
+    protected bool following;
     
     public float speed = 1.5f;
     // Start is called before the first frame update
-    void Start()
+     protected void Start()
     {
         //basicSound = GetComponent<AudioSource>();
-        Player = GameObject.Find("Body");
+        Player = GameObject.Find("PlayerBody");
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         FollowPlayer();
         healthControl();
@@ -48,24 +48,20 @@ public class Enemy : Npc
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "bullet")
-        {
-            Bullet bullet = collision.gameObject.GetComponent<Bullet>();
-            takeDamage(bullet.damage);
-        }
+        //if(collision.gameObject.tag == "bullet")
+        //{
+        //    Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+        //    takeDamage(bullet.damage);
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "activateBox")
-        {
-            following = true;
-        }
-        //if (collision.gameObject.tag == "bullet")
+        //if(collision.tag == "activateBox")
         //{
-        //    Debug.Log("trigger");
-        
+        //    following = true;
         //}
+        
     }
 
     private void takeDamage(float damage)

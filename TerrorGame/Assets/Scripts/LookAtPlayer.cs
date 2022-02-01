@@ -11,7 +11,7 @@ public class LookAtPlayer : MonoBehaviour
     private float angle;
     void Start()
     {
-        player = GameObject.Find("Body");
+        player = GameObject.Find("PlayerBody");
     }
 
     // Update is called once per frame
