@@ -8,9 +8,11 @@ public class Player : Npc
     Rigidbody2D rb;
     
     AudioSource stepSound;
-    public GameObject atkRange;
+   
     float horizontal;
     float vertical;
+    public Animator atk;
+    public GameObject atkRangeObject;
 
     public float walkSpeed = 2.0f;
     public float runSpeed = 3.0f;
@@ -29,7 +31,7 @@ public class Player : Npc
     void Update()
     {
         
-        move();
+        checkForMove();
        
         checkRun();
 
@@ -40,11 +42,13 @@ public class Player : Npc
     {
         if (Input.GetMouseButtonDown(0))
         {
-
+            atk.SetTrigger("atk");
+            atkRangeObject.SetActive(true);
+            
         }
     }
 
-    private void move()
+    private void checkForMove()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
@@ -84,7 +88,13 @@ public class Player : Npc
         }
     }
     private void FixedUpdate()
+    {   
+        Move();
+    }
+
+    private void Move()
     {
+        // /raiz de 2?
         rb.velocity = new Vector2(horizontal * speed, vertical * speed);
     }
 
@@ -95,8 +105,9 @@ public class Player : Npc
             case "enemy":
                 if (Input.GetKey(KeyCode.F))
                 {
+
                     Cat cat = col.gameObject.GetComponent<Cat>();
-                    cat.ReceiveDamage();
+                    //cat.ReceiveDamage();
                     Debug.Log("Gato do Rubens? Morto.");
                     //col.transform.gameObject
                     //Destroy(col.transform.gameObject);
@@ -112,7 +123,6 @@ public class Player : Npc
                 
             }
         }
-
-        
+    
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LookAtMouse : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject player;
+    //public GameObject player;
     private Vector3 mouse_pos;
     private Vector3 object_pos;
     private float angle;

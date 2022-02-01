@@ -59,14 +59,17 @@
     <Compile Include="Assets\Scripts\HealthBar.cs" />
     <Compile Include="Assets\Scripts\Blood.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\DayManager.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\ActivateBox.cs" />
     <Compile Include="Assets\Scripts\Npc.cs" />
+    <Compile Include="Assets\Scripts\Cat.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
-    <Compile Include="Assets\Scripts\DayManager.cs" />
-    <Compile Include="Assets\Cat.cs" />
-    <Compile Include="Assets\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerHitBox.cs" />
+    <Compile Include="Assets\Scripts\AtkController.cs" />
+    <Compile Include="Assets\Scripts\LookAtPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
