@@ -8,7 +8,7 @@ public class Player : Npc
     Rigidbody2D rb;
     
     AudioSource stepSound;
-   
+   //new private  HealthBar healthBar;
     float horizontal;
     float vertical;
     public Animator atk;
@@ -16,7 +16,7 @@ public class Player : Npc
 
     public float walkSpeed = 2.0f;
     public float runSpeed = 3.0f;
-    public float speed = 0;
+    //public float speed = 0;
     bool idle = true;
 
 
@@ -25,12 +25,14 @@ public class Player : Npc
     {
         rb = GetComponent<Rigidbody2D>();
         stepSound = GetComponent<AudioSource>();
+       // healthBar.transform.localScale = new Vector3(0.1f, (currentLife / maxLife), 1);
+
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
-        
+        base.Update();
         checkForMove();
        
         checkRun();
@@ -98,6 +100,12 @@ public class Player : Npc
         rb.velocity = new Vector2(horizontal * speed, vertical * speed);
     }
 
+    public void ReceiveDamage(float dmg)
+    {
+        this.currentLife -= dmg;
+       // healthBar.transform.localScale = new Vector3(0.1f, (currentLife / maxLife), 1);
+
+    }
     void OnTriggerStay2D(Collider2D col)
     {
         switch (col.tag)

@@ -235,7 +235,7 @@ TextureImporter:
     second: survival_game_76
   - first:
       213: -8025759389033018172
-    second: survival_game_77
+    second: spider
   - first:
       213: 7457860946526716173
     second: survival_game_78
@@ -1948,7 +1948,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: survival_game_77
+      name: spider
       rect:
         serializedVersion: 2
         x: 64

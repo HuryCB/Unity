@@ -33,8 +33,8 @@ public class PlayerHitBox : MonoBehaviour
     
         if (collision.tag == "enemy")
         {
-            Cat cat = collision.gameObject.GetComponent<Cat>();
-            cat.ReceiveDamage();
+            //Cat cat = collision.gameObject.GetComponent<Cat>();
+            //cat.ReceiveDamage();
         }
         
         canAttack = false;

@@ -24,10 +24,5 @@ public class AgressiveEnemy : Enemy
             following = true;
             Debug.Log("following");
         }
-        //if (collision.gameObject.tag == "bullet")
-        //{
-        //    Debug.Log("trigger");
-
-        //}
     }
 }

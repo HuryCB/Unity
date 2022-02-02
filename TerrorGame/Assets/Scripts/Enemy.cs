@@ -9,7 +9,8 @@ public class Enemy : Npc
     protected GameObject Player;
     protected bool following;
     
-    public float speed = 1.5f;
+
+   
     // Start is called before the first frame update
      protected void Start()
     {
@@ -18,10 +19,11 @@ public class Enemy : Npc
     }
 
     // Update is called once per frame
-    protected void Update()
+    new protected void Update()
     {
+        base.Update();
         FollowPlayer();
-        healthControl();
+        //healthControl();
     }
 
     private void FollowPlayer()
@@ -42,25 +44,19 @@ public class Enemy : Npc
             if (!basicSound.isPlaying)
             {
                 basicSound.Play();
+                Debug.Log("tocando");
             }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //if(collision.gameObject.tag == "bullet")
-        //{
-        //    Bullet bullet = collision.gameObject.GetComponent<Bullet>();
-        //    takeDamage(bullet.damage);
-        //}
+     
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if(collision.tag == "activateBox")
-        //{
-        //    following = true;
-        //}
+       
         
     }
 
