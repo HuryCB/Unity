@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NpcHitBox : MonoBehaviour
 {
-    private bool canAttack = true;
+    //private bool canAttack = true;
     public Npc npc;
     public Animator npcAttack;
 
@@ -15,7 +15,7 @@ public class NpcHitBox : MonoBehaviour
 
     private void AttackPlayer(Collider2D collision)
     {
-        if (!canAttack)
+        if (!npc.canAttack)
         {
             return;
         }
@@ -23,16 +23,22 @@ public class NpcHitBox : MonoBehaviour
         if (collision.tag == "Player")
         {
             npcAttack.SetTrigger("Attack");
+            npc.isAttacking = true;
             Player player = collision.gameObject.GetComponent<Player>();
 
             player.ReceiveDamage(npc.damage);
             //Debug.Log("machucando");
         }
 
-        canAttack = false;
+        npc.canAttack = true;
     }
-    public void setCanAttack(bool canAttack)
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        this.canAttack = canAttack;
+        
     }
+    //public void setCanAttack(bool canAttack)
+    //{
+    //    this.canAttack = canAttack;
+    //}
 }

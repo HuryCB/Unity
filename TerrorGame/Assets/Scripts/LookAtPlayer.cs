@@ -5,6 +5,7 @@ using UnityEngine;
 public class LookAtPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
+    public bool lookAtPlayer = false;
     private GameObject player;
     private Vector3 object_pos;
     private Vector3 player_pos;
@@ -14,9 +15,17 @@ public class LookAtPlayer : MonoBehaviour
         player = GameObject.Find("PlayerBody");
     }
 
+    public void setLookAtPlayer(bool state)
+    {
+        lookAtPlayer = state;
+    }
     // Update is called once per frame
     void Update()
     {
+        if (!lookAtPlayer)
+        {
+            return;
+        }
         player_pos = player.transform.position;
         player_pos.z = 5.23F; //The distance between the camera and object
         //object_pos = Camera.main.WorldToScreenPoint(transform.position);

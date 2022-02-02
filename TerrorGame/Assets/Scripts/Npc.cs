@@ -9,6 +9,12 @@ public class Npc : MonoBehaviour
     public float maxLife = 100;
     public float damage = 0;
     public float speed = 1.5f;
+    public bool canAttack { get; set; }
+    public bool isAttacking { get; set; }
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {

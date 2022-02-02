@@ -33,6 +33,9 @@ public class PlayerHitBox : MonoBehaviour
     
         if (collision.tag == "enemy")
         {
+            Enemy2 enemy = collision.gameObject.GetComponent<Enemy2>();
+            enemy.TakeDamage(30);
+            Debug.Log("attacking!");
             //Cat cat = collision.gameObject.GetComponent<Cat>();
             //cat.ReceiveDamage();
         }
