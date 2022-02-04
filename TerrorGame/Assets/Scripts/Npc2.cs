@@ -15,28 +15,29 @@ public class Npc2 : MonoBehaviour
     public bool wasAttacked;
     public float timeToNormalizeBehaviour;
     public Animator npcAnimation;
-    //public AudioSource receiveDamageSound;
+    public AudioSource receiveDamageSound;
 
-    public virtual void setWasAttacked(bool wasAttacked)
-    {
-        wasAttacked = true;
-    }
+    //public virtual void setWasAttacked(bool wasAttacked)
+    //{
+    //    wasAttacked = true;
+    //}
     void Start()
-    {
-        
-    }
-
-    
-    public void Update()
     {
         healthControl();
     }
 
-    public void TakeDamage(float dmg)
+
+    //public void Update()
+    //{
+    //    healthControl();
+    //}
+
+    public virtual void TakeDamage(float dmg)
     {
-        npcAnimation.SetTrigger("TakeDamage");
+        //npcAnimation.SetTrigger("TakeDamage");
         this.currentLife -= dmg;
-        setWasAttacked(true);
+        //setWasAttacked(true);
+        healthControl();
     }
 
     public void Heal(float healAmount)

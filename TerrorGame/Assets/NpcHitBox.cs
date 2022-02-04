@@ -5,7 +5,7 @@ using UnityEngine;
 public class NpcHitBox : MonoBehaviour
 {
     //private bool canAttack = true;
-    public Npc npc;
+    public Npc2 npc;
     public Animator npcAttack;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,7 +23,7 @@ public class NpcHitBox : MonoBehaviour
         if (collision.tag == "Player")
         {
             npcAttack.SetTrigger("Attack");
-            npc.isAttacking = true;
+            //npc.isAttacking = true;
             Player player = collision.gameObject.GetComponent<Player>();
 
             player.ReceiveDamage(npc.damage);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pigman : AgressiveEnemy
+public class Pigman : Enemy2
 {
     // Start is called before the first frame update
     
@@ -13,7 +13,7 @@ public class Pigman : AgressiveEnemy
     }
 
     // Update is called once per frame
-    new void Update()
+    new protected void Update()
     {
         base.Update();
     }

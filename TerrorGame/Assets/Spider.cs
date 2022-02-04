@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spider : AgressiveEnemy
+public class Spider : Enemy2
 {
     // Start is called before the first frame update
     new void Start()
@@ -12,7 +12,7 @@ public class Spider : AgressiveEnemy
     }
 
     // Update is called once per frame
-    new void Update()
+    new protected  void Update()
     {
         base.Update();
     }

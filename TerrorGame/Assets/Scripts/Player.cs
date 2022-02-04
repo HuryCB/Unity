@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Npc
+public class Player : Npc2
 {
     Rigidbody2D rb;
     
@@ -30,9 +30,9 @@ public class Player : Npc
     }
 
     // Update is called once per frame
-    new void Update()
+     void Update()
     {
-        base.Update();
+        //base.Update();
         checkForMove();
        
         checkRun();
