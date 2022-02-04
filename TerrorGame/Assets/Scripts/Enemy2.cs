@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class Enemy2 : Npc2
 {
-    public GameObject player;
-    public GameObject atkRange;
+    public Player player;
+    public Enemy2HitBox atkRange;
     public LookAtPlayer lookAtPlayer;
     public bool isAttacking = false;
     public float lastAttack = 0;
     public float attackCoolDown = 10;
-
+    
     public Enemy2BaseState currentState;
     public Enemy2ChasingState ChasingState = new Enemy2ChasingState();
     public Enemy2IdleState IdleState = new Enemy2IdleState();
@@ -19,16 +19,16 @@ public class Enemy2 : Npc2
     public Enemy2AttackedState AttackedState = new Enemy2AttackedState();
     protected void Start()
     {
-        player = GameObject.Find("PlayerBody");
+        player = GameObject.Find("PlayerBody").GetComponent<Player>();
         currentState = IdleState;
-       
+        atkRange.gameObject.SetActive(false);
 
         currentState.EnterState(this);
     }
 
-    protected void Update()
+    new void Update()
     {
-        //base.Update();
+        base.Update();
         currentState.UpdateState();
     }
 
@@ -44,6 +44,17 @@ public class Enemy2 : Npc2
         currentState.EnterState(this);
     }
 
+    public void AfterAttack()
+    {
+        this.lastAttack = Time.time;
+        if (atkRange.isTouchingPlayer)
+        {
+            //Debug.Log("machucando player");
+            //Debug.Log(player.currentLife);
+            player.ReceiveDamage(this.damage);
+        }
+        this.SwitchState(this.ChasingState);
+    }
     //public void ChangeToChasing()
     //{
     //    SwitchState(ChasingState);

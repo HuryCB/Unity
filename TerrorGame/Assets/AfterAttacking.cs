@@ -9,12 +9,13 @@ public class AfterAttacking : MonoBehaviour
     
     public void AfterAttack()
     {
-        enemy.lastAttack = Time.time ;
+        //enemy.lastAttack = Time.time ;
         //+ enemy.attackCoolDown
 
         //Debug.Log("Last Attack:"+enemy.lastAttack);
         //Debug.Log("Current time:"+Time.time);
         //Debug.Log("Recarga"+enemy.attackCoolDown);
-        enemy.SwitchState(enemy.ChasingState);
+        //enemy.SwitchState(enemy.ChasingState);
+        enemy.AfterAttack();
     }
 }

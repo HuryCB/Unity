@@ -30,14 +30,15 @@ public class Player : Npc2
     }
 
     // Update is called once per frame
-     void Update()
+     new void Update()
     {
-        //base.Update();
+        base.Update();
         checkForMove();
        
         checkRun();
 
         checkMouseInput();
+        //healthControl();
     }
 
     private void checkMouseInput()

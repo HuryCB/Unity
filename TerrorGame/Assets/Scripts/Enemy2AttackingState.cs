@@ -8,12 +8,13 @@ public class Enemy2AttackingState : Enemy2BaseState
     {
         this.enemy = enemy;
         //Debug.Log("Attacking State");
+        enemy.atkRange.gameObject.SetActive(true);
         enemy.npcAnimation.SetTrigger("Attacking");
     }
 
     public override void ExitState()
     {
-        return;
+        enemy.atkRange.gameObject.SetActive(false);
     }
 
     public override void UpdateState()

@@ -25,7 +25,7 @@ public class AtkController : MonoBehaviour
     {
         if (this.handMovement.GetCurrentAnimatorStateInfo(0).IsName("Hand_Idle"))
         {
-            //Debug.Log("idle");
+            Debug.Log("idle");
             atkRange.setCanAttack(true);
             atkRange.gameObject.SetActive(false);
         }

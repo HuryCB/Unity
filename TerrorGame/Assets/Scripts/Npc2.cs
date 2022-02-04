@@ -27,10 +27,10 @@ public class Npc2 : MonoBehaviour
     }
 
 
-    //public void Update()
-    //{
-    //    healthControl();
-    //}
+    public void Update()
+    {
+        healthControl();
+    }
 
     public virtual void TakeDamage(float dmg)
     {
@@ -51,7 +51,7 @@ public class Npc2 : MonoBehaviour
             this.currentLife += healAmount;
         }
     }
-    private void healthControl()
+    protected void healthControl()
     {
         if(this.currentLife < 0)
         {
