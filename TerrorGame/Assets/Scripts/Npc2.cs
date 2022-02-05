@@ -10,17 +10,13 @@ public class Npc2 : MonoBehaviour
     public float maxLife = 100;
     public float damage = 0;
     public float speed = 1.5f;
-    public bool isFollowing = false; 
+    //public bool isFollowing = false; 
     public bool canAttack = false;
-    public bool wasAttacked;
-    public float timeToNormalizeBehaviour;
+    //public bool wasAttacked;
+    //public float timeToNormalizeBehaviour;
     public Animator npcAnimation;
     public AudioSource receiveDamageSound;
 
-    //public virtual void setWasAttacked(bool wasAttacked)
-    //{
-    //    wasAttacked = true;
-    //}
     void Start()
     {
         healthControl();
@@ -37,7 +33,7 @@ public class Npc2 : MonoBehaviour
         //npcAnimation.SetTrigger("TakeDamage");
         this.currentLife -= dmg;
         //setWasAttacked(true);
-        healthControl();
+        //healthControl();
     }
 
     public void Heal(float healAmount)

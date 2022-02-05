@@ -57,7 +57,7 @@
     <Compile Include="Assets\Scripts\PigmanStateManager.cs" />
     <Compile Include="Assets\Scripts\AtkController.cs" />
     <Compile Include="Assets\Scripts\Enemy2.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Player2.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Spider.cs" />
     <Compile Include="Assets\Scripts\BaseState.cs" />
@@ -68,6 +68,7 @@
     <Compile Include="Assets\NpcHitBox.cs" />
     <Compile Include="Assets\AfterAttacking.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Enemy2HitBox.cs" />
     <Compile Include="Assets\Scripts\DayManager.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Enemy2AttackingState.cs" />
@@ -92,7 +93,12 @@
     <Compile Include="Assets\Scripts\Enemy2ChasingState.cs" />
     <Compile Include="Assets\Scripts\PlayerHitBox.cs" />
     <Compile Include="Assets\Scripts\Enemy2AttackedState.cs" />
-    <Compile Include="Assets\Enemy2HitBox.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PlayerBaseState.cs" />
+    <Compile Include="Assets\Scripts\PlayerIdleState.cs" />
+    <Compile Include="Assets\Scripts\PlayerAttackedState.cs" />
+    <Compile Include="Assets\Scripts\PlayerAttackingState.cs" />
+    <Compile Include="Assets\Scripts\PlayerRunningState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

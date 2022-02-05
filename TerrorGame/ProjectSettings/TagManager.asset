@@ -9,6 +9,7 @@ TagManager:
   - enemy
   - activateBox
   - bullet
+  - EnemyAtkBox
   layers:
   - Default
   - TransparentFX

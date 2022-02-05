@@ -5,133 +5,139 @@ using UnityEngine;
 
 public class Player : Npc2
 {
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
+    public AudioSource stepSound;
     
-    AudioSource stepSound;
-   //new private  HealthBar healthBar;
-    float horizontal;
-    float vertical;
     public Animator atk;
+    public float lastAttack = 0;
+    public float attackCoolDown = 10;
+    //public Animator npcAnimation;
     public GameObject atkRangeObject;
 
     public float walkSpeed = 2.0f;
     public float runSpeed = 3.0f;
-    //public float speed = 0;
-    bool idle = true;
 
+    public float horizontal;
+    public void setHorizontal(float horizontal)
+    {
+        this.horizontal = horizontal;
+    }
+    public float vertical;
+    public void setVertical(float vertical)
+    {
+        this.vertical = vertical;
+    }
 
-    // Start is called before the first frame update
+    public PlayerBaseState currentState;
+    public PlayerIdleState IdleState = new PlayerIdleState();
+    public PlayerAttackedState AttackedState = new PlayerAttackedState();
+    public PlayerAttackingState AttackingState = new PlayerAttackingState();
+    public PlayerRunningState RunningState = new PlayerRunningState();
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         stepSound = GetComponent<AudioSource>();
-       // healthBar.transform.localScale = new Vector3(0.1f, (currentLife / maxLife), 1);
-
+        currentState = IdleState;
+        currentState.EnterState(this);
     }
 
     // Update is called once per frame
-     new void Update()
+    new void Update()
     {
         base.Update();
-        checkForMove();
-       
-        checkRun();
+        currentState.UpdateState();
+        checkForKeybordInput();
+
+        //checkRun();
 
         checkMouseInput();
         //healthControl();
     }
 
-    private void checkMouseInput()
+    public void checkMouseInput()
     {
+        
         if (Input.GetMouseButtonDown(0))
         {
-            atk.SetTrigger("atk");
-            atkRangeObject.SetActive(true);
+            if (currentState == AttackedState)
+            {
+                return;
+            }
+            SwitchState(AttackingState);
             
+
         }
     }
 
-    private void checkForMove()
+    private void checkForKeybordInput()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
-        if (rb.velocity.x != 0 || rb.velocity.y != 0) 
-        {
-            idle = false;
-        }
-        else
-        {
-            idle = true;
-        }
+        //Debug.Log(horizontal);
+        //Debug.Log(vertical);
+        //if (rb.velocity.x != 0 || rb.velocity.y != 0)
+        //{
+        //    idle = false;
+        //}
+        //else
+        //{
+        //    idle = true;
+        //}
 
-        if (idle)
-        {
-            stepSound.Stop();
-        }
-        else
-        {
-            if (!stepSound.isPlaying)
-            {
-                stepSound.Play();
-            }
-        }
+        //if (idle)
+        //{
+        //    stepSound.Stop();
+        //}
+        //else
+        //{
+        //    if (!stepSound.isPlaying)
+        //    {
+        //        stepSound.Play();
+        //    }
+        //}
     }
 
-    private void checkRun()
+    public void SwitchState(PlayerBaseState state)
     {
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            speed = runSpeed;
-            stepSound.pitch = runSpeed / walkSpeed;
-        }
-        else
-        {
-            speed = walkSpeed;
-            stepSound.pitch = walkSpeed / walkSpeed;
-        }
+        currentState.ExitState();
+        currentState = state;
+        currentState.EnterState(this);
     }
+    //private void checkRun()
+    //{
+    //    if (Input.GetKey(KeyCode.LeftShift))
+    //    {
+    //        speed = runSpeed;
+    //        stepSound.pitch = runSpeed / walkSpeed;
+    //    }
+    //    else
+    //    {
+    //        speed = walkSpeed;
+    //        stepSound.pitch = walkSpeed / walkSpeed;
+    //    }
+    //}
     private void FixedUpdate()
-    {   
-        Move();
+    {
+        currentState.FIxedUpdateState();
+        //Move();
     }
 
-    private void Move()
+    //private void Move()
+    //{
+    //    // /raiz de 2?
+    //    rb.velocity = new Vector2(horizontal * speed, vertical * speed);
+    //}
+
+    //public void ReceiveDamage(float dmg)
+    //{
+    //    this.currentLife -= dmg;
+    //    // healthBar.transform.localScale = new Vector3(0.1f, (currentLife / maxLife), 1);
+
+    //}
+    public override void TakeDamage(float dmg)
     {
-        // /raiz de 2?
-        rb.velocity = new Vector2(horizontal * speed, vertical * speed);
-    }
-
-    public void ReceiveDamage(float dmg)
-    {
-        this.currentLife -= dmg;
-       // healthBar.transform.localScale = new Vector3(0.1f, (currentLife / maxLife), 1);
-
-    }
-    void OnTriggerStay2D(Collider2D col)
-    {
-        switch (col.tag)
-        {
-            case "enemy":
-                if (Input.GetKey(KeyCode.F))
-                {
-
-                    Cat cat = col.gameObject.GetComponent<Cat>();
-                    //cat.ReceiveDamage();
-                    Debug.Log("Gato do Rubens? Morto.");
-                    //col.transform.gameObject
-                    //Destroy(col.transform.gameObject);
-
-                }
-                break;
-        }
-        if (col.tag == "door")
-        {
-            if (Input.GetKey(KeyCode.E)){
-                Debug.Log("Oi");
-                Destroy(col.transform.parent.gameObject);
-                
-            }
-        }
-    
+        base.TakeDamage(dmg);
+        SwitchState(AttackedState);
     }
 }

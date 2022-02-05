@@ -8,7 +8,7 @@ public class Enemy2 : Npc2
     public Player player;
     public Enemy2HitBox atkRange;
     public LookAtPlayer lookAtPlayer;
-    public bool isAttacking = false;
+    //public bool isAttacking = false;
     public float lastAttack = 0;
     public float attackCoolDown = 10;
     
@@ -51,35 +51,9 @@ public class Enemy2 : Npc2
         {
             //Debug.Log("machucando player");
             //Debug.Log(player.currentLife);
-            player.ReceiveDamage(this.damage);
+            player.TakeDamage(this.damage);
         }
         this.SwitchState(this.ChasingState);
     }
-    //public void ChangeToChasing()
-    //{
-    //    SwitchState(ChasingState);
-    //}
-
-    
-    //private void FollowPlayer()
-    //{
-    //    if (!isFollowing)
-    //    {
-    //        return;
-    //    }
-    //    transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
-
-    //}
-
-    //public override void setWasAttacked(bool wasAttacked)
-    //{
-    //    wasAttacked = true;
-    //    AttackBehaviour();
-    //}
-
-    //private void AttackBehaviour()
-    //{
-    //    isFollowing = true;
-    //    lookAtPlayer.setLookAtPlayer(true);
-    //}
+   
 }
