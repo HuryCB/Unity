@@ -8,14 +8,15 @@ public class PlayerAttackingState : PlayerBaseState
     {
         Debug.Log("Attacking");
         this.player = player;
+        player.npcAnimation.SetTrigger("Attacking");
         player.atk.SetTrigger("atk");
         player.atkRangeObject.SetActive(true);
+       
     }
 
     public override void ExitState()
     {
-        //player.atk.SetTrigger("atk");
-        //player.atkRangeObject.ca
+        player.npcAnimation.ResetTrigger("Attacking");
         player.atkRangeObject.SetActive(false);
     }
 

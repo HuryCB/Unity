@@ -8,12 +8,13 @@ public class DayManager : MonoBehaviour
     public GameObject globalLight;
     private Light2D worldLight;
     public float dayDuration;
-    private float currentDaytime;
+    public float currentDaytime = 0;
     private int globalDay = 1;
+    //public string currentDayPeriod = "Day";
     // Start is called before the first frame update
     void Start()
     {
-        currentDaytime = Time.time;
+        //currentDaytime = Time.time;
         worldLight = globalLight.GetComponent<Light2D>();
     }
 

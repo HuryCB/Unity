@@ -10,7 +10,14 @@ public class Player : Npc2
     
     public Animator atk;
     public float lastAttack = 0;
-    public float attackCoolDown = 10;
+    public float attackCoolDown = 1.5f;
+
+    public bool idle;
+    public bool getIdle()
+    {
+        return this.idle;
+    }
+
     //public Animator npcAnimation;
     public GameObject atkRangeObject;
 
@@ -18,16 +25,9 @@ public class Player : Npc2
     public float runSpeed = 3.0f;
 
     public float horizontal;
-    public void setHorizontal(float horizontal)
-    {
-        this.horizontal = horizontal;
-    }
     public float vertical;
-    public void setVertical(float vertical)
-    {
-        this.vertical = vertical;
-    }
-
+    public int numberOfTargetsAffectedPerAttack = 1;
+    
     public PlayerBaseState currentState;
     public PlayerIdleState IdleState = new PlayerIdleState();
     public PlayerAttackedState AttackedState = new PlayerAttackedState();
@@ -46,95 +46,64 @@ public class Player : Npc2
     new void Update()
     {
         base.Update();
-        currentState.UpdateState();
-        checkForKeybordInput();
+        //checkForKeybordInput();
 
         //checkRun();
 
-        checkMouseInput();
+        //checkMouseInput();
+        currentState.UpdateState();
+        
         //healthControl();
     }
 
     public void checkMouseInput()
-    {
-        
+    {     
         if (Input.GetMouseButtonDown(0))
         {
-            if (currentState == AttackedState)
-            {
-                return;
-            }
+            //if (currentState == AttackedState)
+            //{
+            //    return;
+            //}
             SwitchState(AttackingState);
-            
-
         }
     }
 
-    private void checkForKeybordInput()
+    public void AfterAttacked()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-        //Debug.Log(horizontal);
-        //Debug.Log(vertical);
-        //if (rb.velocity.x != 0 || rb.velocity.y != 0)
-        //{
-        //    idle = false;
-        //}
-        //else
-        //{
-        //    idle = true;
-        //}
-
-        //if (idle)
-        //{
-        //    stepSound.Stop();
-        //}
-        //else
-        //{
-        //    if (!stepSound.isPlaying)
-        //    {
-        //        stepSound.Play();
-        //    }
-        //}
+        this.SwitchState(this.IdleState);
     }
+
+    //public void checkForKeybordInput()
+    //{
+    //    horizontal = Input.GetAxisRaw("Horizontal");
+    //    vertical = Input.GetAxisRaw("Vertical");
+
+    //    if (horizontal != 0 || vertical != 0)
+    //    {
+    //        idle = false;
+    //        SwitchState(RunningState);
+    //    }
+    //    else
+    //    {
+    //        idle = true;
+    //        SwitchState(IdleState);
+    //    }
+    //}
 
     public void SwitchState(PlayerBaseState state)
     {
         currentState.ExitState();
+        state.EnterState(this);
         currentState = state;
-        currentState.EnterState(this);
+       
     }
-    //private void checkRun()
-    //{
-    //    if (Input.GetKey(KeyCode.LeftShift))
-    //    {
-    //        speed = runSpeed;
-    //        stepSound.pitch = runSpeed / walkSpeed;
-    //    }
-    //    else
-    //    {
-    //        speed = walkSpeed;
-    //        stepSound.pitch = walkSpeed / walkSpeed;
-    //    }
-    //}
+  
     private void FixedUpdate()
     {
         currentState.FIxedUpdateState();
         //Move();
     }
 
-    //private void Move()
-    //{
-    //    // /raiz de 2?
-    //    rb.velocity = new Vector2(horizontal * speed, vertical * speed);
-    //}
-
-    //public void ReceiveDamage(float dmg)
-    //{
-    //    this.currentLife -= dmg;
-    //    // healthBar.transform.localScale = new Vector3(0.1f, (currentLife / maxLife), 1);
-
-    //}
     public override void TakeDamage(float dmg)
     {
         base.TakeDamage(dmg);

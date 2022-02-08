@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerBaseState
 {
-    
+    public float horizontal;
+    public float vertical;
     //bool idle = true;
     public override void EnterState(Player player)
     {
         this.player = player;
-        Debug.Log("Idle");
+        player.npcAnimation.SetTrigger("Idle");
+        //Debug.Log("Idle");
     }
 
     public override void ExitState()
     {
-        return;
+        player.npcAnimation.ResetTrigger("Idle");
     }
 
     public override void FIxedUpdateState()
@@ -24,38 +26,48 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void UpdateState()
     {
-        checkForMove();
+        //Debug.Log("Update Idle");
+        checkForKeybordInput();
+        checkMouseInput();
     }
 
     private void checkForMove()
     {
 
-        if (player.horizontal != 0 || player.vertical != 0)
+        if (horizontal != 0 || vertical != 0)
         {
             player.SwitchState(player.RunningState);
         }
     }
-    //private void checkForMove()
-    //{
-    //    player.horizontal = Input.GetAxisRaw("Horizontal");
-    //    player.vertical = Input.GetAxisRaw("Vertical");
 
-    //    if (player.horizontal != 0 || player.vertical != 0)
-    //    {
-    //        player.SwitchState(player.RunningState);
-    //    }
-    //    else
-    //    {
-    //        idle = true;
-    //    }
+    public void checkForKeybordInput()
+    {
+        horizontal = Input.GetAxisRaw("Horizontal");
+        vertical = Input.GetAxisRaw("Vertical");
+        player.horizontal = horizontal;
+        player.vertical = vertical;
+        checkForMove();
+        //if (horizontal != 0 || vertical != 0)
+        //{
+        //    idle = false;
+        //    SwitchState(RunningState);
+        //}
+        //else
+        //{
+        //    idle = true;
+        //    SwitchState(IdleState);
+        //}
+    }
 
-    //    if (idle)
-    //    {
-    //        player.stepSound.Stop();
-    //    }
-    //    else
-    //    {
-
-    //    }
-    //}
+    public void checkMouseInput()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            //if (currentState == AttackedState)
+            //{
+            //    return;
+            //}
+            player.SwitchState(player.AttackingState);
+        }
+    }
 }

@@ -7,14 +7,15 @@ public class PlayerAttackedState : PlayerBaseState
     public override void EnterState(Player player)
     {
         this.player = player;
+        player.npcAnimation.SetTrigger("Attacked");
         //player.receiveDamageSound.Play();
         //player.npcAnimation.SetTrigger("Attacked");
-        Debug.Log("Attacked");
+        //Debug.Log("Attacked");
     }
 
     public override void ExitState()
     {
-        return;
+        //player.SwitchState(player.IdleState);
     }
 
     public override void FIxedUpdateState()

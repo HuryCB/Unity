@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class PlayerHitBox : MonoBehaviour
 {
+    private Player player;
     public bool canAttack = true;
+
+    private void Start()
+    {
+        player = GameObject.Find("PlayerBody").GetComponent<Player>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,34 +20,33 @@ public class PlayerHitBox : MonoBehaviour
 
     private void AttackOneEnemy(Collider2D collision)
     {
+
         if (!canAttack)
         {
+            Debug.Log("Cant attack");
             return;
         }
-        if(!collision.tag.Equals("enemy"))
-        {
-            return;
-        }
+        //if(!collision.tag.Equals("enemy"))
+        //{
+        //    return;
+        //}
 
-        Debug.Log("trying");
-        Debug.Log(collision.tag);
+        //Debug.Log("trying");
+        //Debug.Log(collision.tag);
         if (collision.tag == "enemy")
         {
-            Debug.Log("attacking!");
+            Debug.Log("attacking enemy!");
             Enemy2 enemy = collision.gameObject.GetComponent<Enemy2>();
-            enemy.TakeDamage(3);
-   
+            enemy.TakeDamage(player.damage);
+            canAttack = false;
         }
         
-        canAttack = false;
+        
     }
 
     public void setCanAttack(bool canAttack)
     {
         this.canAttack = canAttack;
     }
-    void OnTriggerStay2D(Collider2D col)
-    {
-        AttackOneEnemy(col);
-    }
+   
 }
