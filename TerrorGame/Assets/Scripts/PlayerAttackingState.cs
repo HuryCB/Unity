@@ -6,7 +6,7 @@ public class PlayerAttackingState : PlayerBaseState
 {
     public override void EnterState(Player player)
     {
-        Debug.Log("Attacking");
+        //Debug.Log("Attacking");
         this.player = player;
         player.npcAnimation.SetTrigger("Attacking");
         player.atk.SetTrigger("atk");

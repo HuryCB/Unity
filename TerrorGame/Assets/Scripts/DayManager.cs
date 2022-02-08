@@ -5,13 +5,33 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class DayManager : MonoBehaviour
 {
+    public static DayManager Instance;
     public GameObject globalLight;
     private Light2D worldLight;
     public float dayDuration;
     public float currentDaytime = 0;
     private int globalDay = 1;
+    public bool isDay = false;
+    public bool isNight = false;
+    public bool isDusk = false;
     //public string currentDayPeriod = "Day";
-    // Start is called before the first frame update
+    //Start is called before the first frame update
+    private void MakeSingleton()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
+    private void Awake()
+    {
+        MakeSingleton();
+    }
     void Start()
     {
         //currentDaytime = Time.time;
@@ -64,14 +84,23 @@ public class DayManager : MonoBehaviour
     private void Night()
     {
         worldLight.intensity = 0;
+        isDay = false;
+        isDusk = false;
+        isNight = true;
     }
     private void Day()
     {
         worldLight.intensity = 1;
+        isDay = true;
+        isDusk = false;
+        isNight = false;
     }
 
     private void Dusk()
     {
         worldLight.intensity = 0.5f;
+        isDay = false;
+        isDusk = true;
+        isNight = false;
     }
 }

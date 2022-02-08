@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class LightPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    Player player;
+
+    private void Start()
     {
-        
+        player = GameObject.Find("PlayerBody").GetComponent<Player>();
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!collision.tag.Equals("Player"))
+        {
+            return;
+        }
+
+        if (!player.getIsLightned())
+        {
+            player.setIsLightned(true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (!collision.tag.Equals("Player"))
+        {
+            return;
+        }
+
+        player.setIsLightned(false);
     }
 }

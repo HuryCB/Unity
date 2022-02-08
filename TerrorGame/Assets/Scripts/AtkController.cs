@@ -13,7 +13,7 @@ public class AtkController : MonoBehaviour
     
     public void EndAttackAnimation()
     {
-        Debug.Log("Funcionou");
+        //Debug.Log("Funcionou");
         
         EndAttack();
         player.SwitchState(player.IdleState);
@@ -22,7 +22,7 @@ public class AtkController : MonoBehaviour
     {
         //if (this.handMovement.GetCurrentAnimatorStateInfo(0).IsName("Hand_Idle"))
         //{
-        Debug.Log("finalizadno atk");
+        //Debug.Log("finalizadno atk");
             atkRange.setCanAttack(true);
             atkRange.gameObject.SetActive(false);
         //}

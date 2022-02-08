@@ -75,7 +75,7 @@
     <Compile Include="Assets\Scripts\DayManager.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Enemy2AttackingState.cs" />
-    <Compile Include="Assets\Scripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Enemy2IdleState.cs" />
     <Compile Include="Assets\Scripts\EnemyIdle.cs" />
     <Compile Include="Assets\Scripts\PigmanHitBox.cs" />
@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\PigmanAtkController.cs" />
     <Compile Include="Assets\Scripts\LookAtPlayer.cs" />
     <Compile Include="Assets\Scripts\EnemySM.cs" />
+    <Compile Include="Assets\LightPlayer.cs" />
     <Compile Include="Assets\ChangeStateAfterAnimation.cs" />
     <Compile Include="Assets\Scripts\PlayerRunningState.cs" />
     <Compile Include="Assets\Scripts\StateMachine.cs" />
@@ -100,7 +101,8 @@
     <Compile Include="Assets\Scripts\Enemy2ChasingState.cs" />
     <Compile Include="Assets\Scripts\PlayerHitBox.cs" />
     <Compile Include="Assets\Scripts\Enemy2AttackedState.cs" />
-    <Compile Include="Assets\LightPlayer.cs" />
+    <Compile Include="Assets\Scripts\BaseForManagers.cs" />
+    <Compile Include="Assets\UIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
