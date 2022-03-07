@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public float darknessDamage = 30;
+    public float darknessDamage = 100;
+    public float darknessSanityPenalty = 20;
     public float timeToDarknessAtk = 6;
+    public DayManager dayManager;
 
     private void MakeSingleton()
     {

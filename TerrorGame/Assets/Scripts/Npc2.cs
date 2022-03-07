@@ -10,6 +10,12 @@ public class Npc2 : MonoBehaviour
     public float maxLife = 100;
     public float damage = 0;
     public float speed = 1.5f;
+
+    public virtual void eat(Food food)
+    {
+        
+    }
+
     //public bool isFollowing = false; 
     public bool canAttack = false;
     //public bool wasAttacked;

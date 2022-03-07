@@ -46,22 +46,22 @@ public class UIManager : MonoBehaviour
     private void correctSanitySprites()
     {
         sanityPerCent = player.currentSanity / player.maxSanity;
-        if (sanityPerCent == 1)
+        if (sanityPerCent >= 0.8)
         {
             sanityStatus.sprite = sanity100;
             return;
         }
-        if (sanityPerCent >= 0.75)
+        if (sanityPerCent >= 0.6)
         {
             sanityStatus.sprite = sanity75;
             return;
         }
-        if (sanityPerCent >= 0.5)
+        if (sanityPerCent >= 0.4)
         {
             sanityStatus.sprite = sanity50;
             return;
         }
-        if (sanityPerCent >= 0.25)
+        if (sanityPerCent >= 0.2)
         {
             sanityStatus.sprite = sanity25;
             return;
@@ -76,22 +76,22 @@ public class UIManager : MonoBehaviour
     private void correctHungerSprites()
     {
         hungerPerCent = player.currentHunger / player.maxHunger;
-        if (hungerPerCent == 1)
+        if (hungerPerCent >= 0.8)
         {
             hungerStatus.sprite = hunger100;
             return;
         }
-        if (hungerPerCent >= 0.75)
+        if (hungerPerCent >= 0.6)
         {
             hungerStatus.sprite = hunger75;
             return;
         }
-        if (hungerPerCent >= 0.5)
+        if (hungerPerCent >= 0.4)
         {
             hungerStatus.sprite = hunger50;
             return;
         }
-        if (hungerPerCent >= 0.25)
+        if (hungerPerCent >= 0.2)
         {
             hungerStatus.sprite = hunger25;
             return;
@@ -106,22 +106,22 @@ public class UIManager : MonoBehaviour
     private void correctLifeSprites()
     {
         lifePerCent = player.currentLife / player.maxLife;
-        if(lifePerCent == 1)
+        if(lifePerCent >= 0.8)
         {
             healthStatus.sprite = health100;
             return;
         }
-        if(lifePerCent >= 0.75)
+        if(lifePerCent >= 0.6)
         {
             healthStatus.sprite = health75;
             return;
         }
-        if(lifePerCent >= 0.5)
+        if(lifePerCent >= 0.4)
         {
             healthStatus.sprite = health50;
             return;
         }
-        if (lifePerCent >= 0.25)
+        if (lifePerCent >= 0.2)
         {
             healthStatus.sprite = health25;
             return;

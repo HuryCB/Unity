@@ -111,4 +111,10 @@ public class PlayerRunningState : PlayerBaseState
             player.SwitchState(player.AttackingState);
         }
     }
+
+    public override void OnTriggerStayState(Collider2D collision)
+    {
+        //player.pickItem(collision);
+        return;
+    }
 }

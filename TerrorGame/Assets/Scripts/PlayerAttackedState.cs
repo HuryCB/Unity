@@ -23,6 +23,11 @@ public class PlayerAttackedState : PlayerBaseState
         return;
     }
 
+    public override void OnTriggerStayState(Collider2D collision)
+    {
+        return;
+    }
+
     public override void UpdateState()
     {
         return;

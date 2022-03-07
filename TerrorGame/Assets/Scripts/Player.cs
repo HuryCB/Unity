@@ -16,10 +16,13 @@ public class Player : Npc2
     public float defaultSanityConsumption = 1;
     public Rigidbody2D rb;
     public AudioSource stepSound;
+    public BoxCollider2D boxCollider2D;
     private bool isLightned = false;
     public Animator atk;
     public float lastAttack = 0;
     public float attackCoolDown = 1.5f;
+    public Item closestItem;
+    public Inventory inventory;
     
     //public bool idle;
 
@@ -62,6 +65,20 @@ public class Player : Npc2
         currentState.EnterState(this);
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        currentState.OnTriggerStayState(collision);
+        if (collision.CompareTag("item"))
+        {
+            if (closestItem == null)
+            {
+                closestItem = collision.gameObject.GetComponent<Item>();
+            }
+        }
+    }
+
+    
+
     // Update is called once per frame
     new void Update()
     {
@@ -74,11 +91,113 @@ public class Player : Npc2
 
         //checkMouseInput();
         currentState.UpdateState();
-      
-        
+        pickItem();
+        useHootBarItem();
+
         //healthControl();
     }
 
+    private void useHootBarItem()
+    {
+        if (Input.GetKeyDown("1"))
+        {
+            inventory.useItem(0);
+        }
+        if (Input.GetKeyDown("2"))
+        {
+            inventory.useItem(1);
+        }
+        if (Input.GetKeyDown("3"))
+        {
+            inventory.useItem(2);
+        }
+        if (Input.GetKeyDown("4"))
+        {
+            inventory.useItem(3);
+        }
+        if (Input.GetKeyDown("5"))
+        {
+            inventory.useItem(4);
+        }
+    }
+
+    //private void useItem(int i)
+    //{
+    //    if(inventory.slots[i] == null)
+    //    {
+    //        return;
+    //    }
+    //    inventory.slots[i].onUse(this);
+    //    inventory.re
+    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("item"))
+        {
+            if (closestItem == collision.gameObject.GetComponent<Item>())
+            {
+                closestItem = null;
+            }
+        }
+    }
+    //public void pickItem(Collider2D collision)
+    //{
+    //    if (Input.GetKeyDown("space"))
+    //    {
+    //        if (collision.tag == "item")
+    //        {
+    //            Debug.Log("item");
+    //            collision.gameObject.GetComponent<Food>().onUse(this);
+    //        }
+    //    }
+    //    return;
+    //}
+    private void pickItem()
+    {
+        if (Input.GetKeyDown("space"))
+        {
+            if(closestItem != null)
+            {
+                inventory.addItem(closestItem);
+                //closestItem.onUse(this);
+                //for(int i = 0; i < inventory.slots.Length; i++)
+                //{
+                //    //diferente do vídeo
+                //    if(inventory.slots[i] == null)
+                //    {
+                //        //inventory.slots[i] = closestItem;
+                //        break;
+                //    }
+                //}
+            }
+        }
+    }
+
+    public override void eat(Food food)
+    {
+        this.currentHunger += food.hungerAmount;
+        this.currentLife += food.healthAmount;
+        this.currentSanity += food.sanityAmount;
+        if (this.currentHunger + food.hungerAmount > maxHunger)
+        {
+            this.currentHunger = maxHunger;
+        }
+        if (this.currentLife + food.healthAmount > maxLife)
+        {
+            this.currentLife = maxLife;
+        }
+        if (this.currentSanity + food.sanityAmount > maxSanity)
+        {
+            this.currentSanity = maxSanity;
+        }
+
+    }
     private void hungerControl()
     {
         currentHunger -= defaultHungerConsumption * hungerConsumptionRate * Time.deltaTime / 60;
@@ -91,8 +210,14 @@ public class Player : Npc2
 
     private void checkForDarknessDamage()
     {
-        
+        //return se tiver sendo iluminado
         if (this.getIsLightned())
+        {
+            return;
+        }
+
+        //retorna se n for de noite
+        if (!GameManager.Instance.dayManager.isNight)
         {
             return;
         }
@@ -108,7 +233,13 @@ public class Player : Npc2
     private void getHitByDarknessDamage()
     {
         TakeDamage(GameManager.Instance.darknessDamage);
+        loseSanity(GameManager.Instance.darknessSanityPenalty);
         timeInDarkness = 0;
+    }
+
+    private void loseSanity(float darknessSanityPenalty)
+    {
+        this.currentSanity -= darknessSanityPenalty;
     }
 
     public void checkMouseInput()
