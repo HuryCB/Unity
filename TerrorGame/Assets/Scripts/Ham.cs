@@ -11,6 +11,18 @@ public class Ham : Food
     {
         Debug.Log("usando");
         npc.eat(this);
-        Destroy(gameObject);
+        //Destroy(this.gameObject);
     }
+
+    //public override Item item()
+    //{
+    //    return new Ham();
+    //    this.remove
+    //}
+    //public void playerEat()
+    //{
+    //    Player player = GameObject.Find("PlayerBody").GetComponent<Player>();
+    //    player.eat(this);
+    //    Destroy(this.gameObject);
+    //}
 }

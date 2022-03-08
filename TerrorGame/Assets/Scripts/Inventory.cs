@@ -28,7 +28,7 @@ public class Inventory : MonoBehaviour
             if(slots[i] == null)
             {
                 slots[i] = item;
-                hotbar[i].sprite = item.gameObject.GetComponent<SpriteRenderer>().sprite;
+                hotbar[i].sprite = item.gameObject.GetComponent<Image>().sprite;
                 return;
             }
         }
