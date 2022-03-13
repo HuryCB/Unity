@@ -62,8 +62,9 @@ public class Npc2 : MonoBehaviour
         healthBar.transform.localScale = new Vector3(0.1f, currentLife / maxLife, 1);
     }
 
-    private void Die()
+    public virtual void Die()
     {
+       
         Destroy(gameObject);
     }
 }

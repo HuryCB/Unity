@@ -40,7 +40,11 @@ public class PlayerHitBox : MonoBehaviour
             enemy.TakeDamage(player.damage);
             canAttack = false;
         }
-        
+        if (collision.CompareTag("hitable"))
+        {
+            collision.gameObject.GetComponent<Hitable>().TakeDamage(player.damage);
+            canAttack = false;
+        }
         
     }
 

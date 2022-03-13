@@ -43,7 +43,11 @@ public class Enemy2 : Npc2
         currentState = state;
         currentState.EnterState(this);
     }
-
+    public override void Die()
+    {
+        base.Die();
+        AudioManager.Instance.CatDeathSound();
+    }
     public void AfterAttack()
     {
         this.lastAttack = Time.time;

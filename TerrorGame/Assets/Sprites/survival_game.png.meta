@@ -242,6 +242,27 @@ TextureImporter:
   - first:
       213: -1327124773264833016
     second: status_health_50
+  - first:
+      213: 3010591147372550052
+    second: hat_ui
+  - first:
+      213: 8996638967344848704
+    second: tree_leaf_2
+  - first:
+      213: 8127129820781373765
+    second: tree_3
+  - first:
+      213: 5273871684804305830
+    second: tree_wood_2
+  - first:
+      213: 8487789400205546317
+    second: hand_ui
+  - first:
+      213: -2146068005200941027
+    second: chest_ui
+  - first:
+      213: 102369565636927680
+    second: leafs
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -2166,7 +2187,7 @@ TextureImporter:
         width: 18
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2174,6 +2195,153 @@ TextureImporter:
       bones: []
       spriteID: 0cccca0bc3e2f5dd0800000000000000
       internalID: -2495224830342935360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_leaf_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 12
+        width: 16
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04fd60d797b7adc70800000000000000
+      internalID: 8996638967344848704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 8
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549682b338d59c070800000000000000
+      internalID: 8127129820781373765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_wood_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 8
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a360cbea5e803940800000000000000
+      internalID: 5273871684804305830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hat_ui
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 247
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7931f92b4c7c920800000000000000
+      internalID: 3010591147372550052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hand_ui
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 229
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43d39f3d7faac570800000000000000
+      internalID: 8487789400205546317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chest_ui
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 229
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10ba260582a732e0800000000000000
+      internalID: -2146068005200941027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leafs
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 21
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0a99bd390bb6100800000000000000
+      internalID: 102369565636927680
       vertices: []
       indices: 
       edges: []

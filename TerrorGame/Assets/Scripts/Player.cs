@@ -92,34 +92,12 @@ public class Player : Npc2
         //checkMouseInput();
         currentState.UpdateState();
         pickItem();
-        useHootBarItem();
+        
 
         //healthControl();
     }
 
-    private void useHootBarItem()
-    {
-        if (Input.GetKeyDown("1"))
-        {
-            inventory.useItem(0);
-        }
-        if (Input.GetKeyDown("2"))
-        {
-            inventory.useItem(1);
-        }
-        if (Input.GetKeyDown("3"))
-        {
-            inventory.useItem(2);
-        }
-        if (Input.GetKeyDown("4"))
-        {
-            inventory.useItem(3);
-        }
-        if (Input.GetKeyDown("5"))
-        {
-            inventory.useItem(4);
-        }
-    }
+    
 
     //private void useItem(int i)
     //{

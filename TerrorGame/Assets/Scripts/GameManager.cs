@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float timeToDarknessAtk = 6;
     public DayManager dayManager;
 
+
     private void MakeSingleton()
     {
         if (Instance != null)
@@ -38,7 +39,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    public bool sorteiaPorcentagem(float n)
+    {
+
+        return true;
+    }
 
     
 }

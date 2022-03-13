@@ -28,7 +28,7 @@ public class Inventory : MonoBehaviour
             if(slots[i] == null)
             {
                 slots[i] = item;
-                hotbar[i].sprite = item.gameObject.GetComponent<Image>().sprite;
+                hotbar[i].sprite = item.gameObject.GetComponent<SpriteRenderer>().sprite;
                 return;
             }
         }
@@ -63,6 +63,53 @@ public class Inventory : MonoBehaviour
         if (isFull)
         {
             isFull = false;
+        }
+    }
+    private void Update()
+    {
+        useHootBarItem();
+    }
+    private void useHootBarItem()
+    {
+        if (Input.GetKeyDown("1"))
+        {
+            useItem(0);
+        }
+        if (Input.GetKeyDown("2"))
+        {
+            useItem(1);
+        }
+        if (Input.GetKeyDown("3"))
+        {
+            useItem(2);
+        }
+        if (Input.GetKeyDown("4"))
+        {
+            useItem(3);
+        }
+        if (Input.GetKeyDown("5"))
+        {
+            useItem(4);
+        }
+        if (Input.GetKeyDown("6"))
+        {
+            useItem(5);
+        }
+        if (Input.GetKeyDown("7"))
+        {
+            useItem(6);
+        }
+        if (Input.GetKeyDown("8"))
+        {
+            useItem(7);
+        }
+        if (Input.GetKeyDown("9"))
+        {
+            useItem(8);
+        }
+        if (Input.GetKeyDown("0"))
+        {
+            useItem(9);
         }
     }
 }

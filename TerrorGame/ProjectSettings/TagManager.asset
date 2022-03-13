@@ -11,6 +11,7 @@ TagManager:
   - bullet
   - EnemyAtkBox
   - item
+  - hitable
   layers:
   - Default
   - TransparentFX
