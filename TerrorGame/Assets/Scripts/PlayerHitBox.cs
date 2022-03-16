@@ -23,7 +23,7 @@ public class PlayerHitBox : MonoBehaviour
 
         if (!canAttack)
         {
-            Debug.Log("Cant attack");
+            //Debug.Log("Cant attack");
             return;
         }
         //if(!collision.tag.Equals("enemy"))

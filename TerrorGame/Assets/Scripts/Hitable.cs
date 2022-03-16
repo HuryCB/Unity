@@ -4,11 +4,8 @@ using UnityEngine;
 
 public interface  Hitable 
 {
-
-    
-
-    float MaxHealth { get; set; }
-    float CurrentHealth { get; set; }
+    //float MaxHealth { get; set; }
+    //float CurrentHealth { get; set; }
 
     public void TakeDamage(float dmg);
 }

@@ -39,11 +39,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public bool sorteiaPorcentagem(float n)
-    {
+    //public bool sorteiaPorcentagem(float n)
+    //{
 
-        return true;
-    }
+    //    return true;
+    //}
 
     
 }

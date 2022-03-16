@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     public bool isFull=false;
+    public MouseController mouseController;
     public Item[] slots;
     public Image[] hotbar;
     public Sprite defaultInventorySprite;
@@ -15,8 +16,15 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("PlayerBody").GetComponent<Player>();
+        mouseController = GameObject.Find("###MouseController###").GetComponent<MouseController>();
     }
 
+    public void AddItemInPos(Item item, int i)
+    {
+        slots[i] = item;
+        hotbar[i].sprite = item.gameObject.GetComponent<SpriteRenderer>().sprite;
+        
+    }
     public void addItem(Item item)
     {
         if (isFull)
@@ -46,6 +54,14 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void OnLeftClick(int pos)
+    {
+        //if (slots[pos] == null)
+        //{
+        //    return;
+        //}
+        mouseController.OnLeftClick(slots[pos], pos, this);
+    }
     public void useItem(int i)
     {
         if(slots[i] == null)
@@ -56,7 +72,7 @@ public class Inventory : MonoBehaviour
         removeItem(i);
     }
 
-    private void removeItem(int i)
+    public void removeItem(int i)
     {
         slots[i] = null;
         hotbar[i].sprite = defaultInventorySprite;

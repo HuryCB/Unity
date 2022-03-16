@@ -144,16 +144,6 @@ public class Player : Npc2
             {
                 inventory.addItem(closestItem.hootbar_item);
                 Destroy(closestItem.gameObject);
-                //closestItem.onUse(this);
-                //for(int i = 0; i < inventory.slots.Length; i++)
-                //{
-                //    //diferente do vídeo
-                //    if(inventory.slots[i] == null)
-                //    {
-                //        //inventory.slots[i] = closestItem;
-                //        break;
-                //    }
-                //}
             }
         }
     }

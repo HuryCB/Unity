@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Blood.cs" />
     <Compile Include="Assets\Scripts\AgressiveEnemy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\Wood.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\PlayerAttackedState.cs" />
     <Compile Include="Assets\Scripts\EnemyMoving.cs" />
@@ -91,8 +92,10 @@
     <Compile Include="Assets\Scripts\Enemy2AttackingState.cs" />
     <Compile Include="Assets\Scripts\Ham.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
+    <Compile Include="Assets\Scripts\Hitable.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
+    <Compile Include="Assets\Tree.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
@@ -141,8 +144,13 @@
     <Compile Include="Assets\Scripts\Enemy2AttackedState.cs" />
     <Compile Include="Assets\Sprites\Item.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\Hitable.cs" />
-    <Compile Include="Assets\Tree.cs" />
+    <Compile Include="Assets\Scripts\Structure.cs" />
+    <Compile Include="Assets\Scripts\Loot.cs" />
+    <Compile Include="Assets\DropSystem.cs" />
+    <Compile Include="Assets\TreeRoot.cs" />
+    <Compile Include="Assets\TreeLeaf.cs" />
+    <Compile Include="Assets\MouseController.cs" />
+    <Compile Include="Assets\GUIClickController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

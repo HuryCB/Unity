@@ -11,7 +11,7 @@ public class Enemy2 : Npc2
     //public bool isAttacking = false;
     public float lastAttack = 0;
     public float attackCoolDown = 10;
-    
+    public DropSystem dropSystem;
     public Enemy2BaseState currentState;
     public Enemy2ChasingState ChasingState = new Enemy2ChasingState();
     public Enemy2IdleState IdleState = new Enemy2IdleState();
@@ -46,6 +46,7 @@ public class Enemy2 : Npc2
     public override void Die()
     {
         base.Die();
+        dropSystem.DropLoot();
         AudioManager.Instance.CatDeathSound();
     }
     public void AfterAttack()
@@ -60,4 +61,8 @@ public class Enemy2 : Npc2
         this.SwitchState(this.ChasingState);
     }
    
+    //public virtual void DropLoot()
+    //{
+        
+    //}
 }
