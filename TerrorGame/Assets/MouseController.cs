@@ -47,6 +47,7 @@ public class MouseController : MonoBehaviour
             inventory.AddItemInPos(holdedItem, position);
             holdedItem = null;
             spriteRenderer.sprite = null;
+            oldInventory = null;
         }
 
     }

@@ -144,6 +144,7 @@ public class Player : Npc2
             {
                 inventory.addItem(closestItem.hootbar_item);
                 Destroy(closestItem.gameObject);
+                closestItem = null;
             }
         }
     }

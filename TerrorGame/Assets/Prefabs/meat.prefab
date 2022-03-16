@@ -114,6 +114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   hootbar_item: {fileID: 8370025735686396003, guid: 174fafb518a13394ca3c9aa6baa252e6, type: 3}
+  itemType: 0
+  stackSize: 10
+  currentQuantity: 1
   healthAmount: 0
   sanityAmount: 0
   hungerAmount: 25

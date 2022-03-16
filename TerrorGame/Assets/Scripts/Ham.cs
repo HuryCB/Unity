@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Ham : Food
 {
+    private void Start()
+    {
+        id = ItemId.Ham;
+    }
     //new public float healthAmount = 2;
     //new public float hungerAmount = 20;
     //new public float sanityAmount = 5;

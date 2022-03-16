@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class Inventory : MonoBehaviour
     public MouseController mouseController;
     public Item[] slots;
     public Image[] hotbar;
+    public TMP_Text[] quantityTexts;
     public Sprite defaultInventorySprite;
     private Player player;
 
@@ -27,20 +29,61 @@ public class Inventory : MonoBehaviour
     }
     public void addItem(Item item)
     {
+        Debug.Log(item.currentQuantity);
+        Debug.Log("id do item novo:" + item.id);
         if (isFull)
         {
             return;
         }
-        for(int i = 0; i < slots.Length; i++)
+        var _hasSameType = verifySameObject(item);
+
+        if (_hasSameType)
         {
-            if(slots[i] == null)
+            return;
+        }
+
+        var _hasAddedItem = addFirstExemplarOfItem(item);
+
+        if (!_hasAddedItem)
+        {
+            isFull = true;
+        }
+        
+    }
+
+    private bool addFirstExemplarOfItem(Item item)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i] == null)
             {
                 slots[i] = item;
+                quantityTexts[i].text = item.currentQuantity.ToString();
                 hotbar[i].sprite = item.gameObject.GetComponent<SpriteRenderer>().sprite;
-                return;
+                return true;
             }
         }
-        isFull = true;
+        return false;
+    }
+
+    private bool verifySameObject(Item item)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (slots[i] == null)
+            {
+                break;
+            }
+            if (slots[i].id == item.id)
+            {
+                Debug.Log("id do item atual:"+slots[i].id);
+                Debug.Log("id do item novo:"+item.id);
+                slots[i].currentQuantity++;
+                quantityTexts[i].text = slots[i].currentQuantity.ToString();
+                return true;
+            }
+        }
+        return false;
     }
 
     public void dropItem(int slotPos)
@@ -76,6 +119,7 @@ public class Inventory : MonoBehaviour
     {
         slots[i] = null;
         hotbar[i].sprite = defaultInventorySprite;
+        quantityTexts[i].text = "";
         if (isFull)
         {
             isFull = false;
