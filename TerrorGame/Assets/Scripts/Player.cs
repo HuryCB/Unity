@@ -21,7 +21,7 @@ public class Player : Npc2
     public Animator atk;
     public float lastAttack = 0;
     public float attackCoolDown = 1.5f;
-    public Item closestItem;
+    public GameObject closestItem;
     public Inventory inventory;
     
     //public bool idle;
@@ -72,7 +72,7 @@ public class Player : Npc2
         {
             if (closestItem == null)
             {
-                closestItem = collision.gameObject.GetComponent<Item>();
+                closestItem = collision.gameObject;
             }
         }
     }
@@ -92,12 +92,54 @@ public class Player : Npc2
         //checkMouseInput();
         currentState.UpdateState();
         pickItem();
-        
+        useHootBarItem();
 
         //healthControl();
     }
 
-    
+    private void useHootBarItem()
+    {
+        if (Input.GetKeyDown("1"))
+        {
+            inventory.useItem(0);
+        }
+        if (Input.GetKeyDown("2"))
+        {
+            inventory.useItem(1);
+        }
+        if (Input.GetKeyDown("3"))
+        {
+            inventory.useItem(2);
+        }
+        if (Input.GetKeyDown("4"))
+        {
+            inventory.useItem(3);
+        }
+        if (Input.GetKeyDown("5"))
+        {
+            inventory.useItem(4);
+        }
+        if (Input.GetKeyDown("6"))
+        {
+            inventory.useItem(5);
+        }
+        if (Input.GetKeyDown("7"))
+        {
+            inventory.useItem(6);
+        }
+        if (Input.GetKeyDown("8"))
+        {
+            inventory.useItem(7);
+        }
+        if (Input.GetKeyDown("9"))
+        {
+            inventory.useItem(8);
+        }
+        if (Input.GetKeyDown("0"))
+        {
+            inventory.useItem(9);
+        }
+    }
 
     //private void useItem(int i)
     //{
@@ -118,34 +160,27 @@ public class Player : Npc2
     {
         if (collision.CompareTag("item"))
         {
-            if (closestItem == collision.gameObject.GetComponent<Item>())
+            if (closestItem == collision.gameObject)
             {
                 closestItem = null;
             }
         }
     }
-    //public void pickItem(Collider2D collision)
-    //{
-    //    if (Input.GetKeyDown("space"))
-    //    {
-    //        if (collision.tag == "item")
-    //        {
-    //            Debug.Log("item");
-    //            collision.gameObject.GetComponent<Food>().onUse(this);
-    //        }
-    //    }
-    //    return;
-    //}
+    
     private void pickItem()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(closestItem != null)
+            if (closestItem == null)
             {
-                inventory.addItem(closestItem.hootbar_item);
-                Destroy(closestItem.gameObject);
-                closestItem = null;
+                return;
             }
+            //Debug.Log("Quantidade do item: " + closestItem.currentQuantity);
+            //Debug.Log("Quantidade do prefab: " + closestItem.hootbar_item.currentQuantity);
+
+            inventory.addItem(Instantiate(closestItem.GetComponent<Item>().hootbar_item));
+            Destroy(closestItem.gameObject);
+            closestItem = null;
         }
     }
 

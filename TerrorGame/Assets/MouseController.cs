@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseController : MonoBehaviour
 {
-    public Item holdedItem;
+    public GameObject holdedItem;
     
     public SpriteRenderer spriteRenderer;
     public int oldPosition;
@@ -25,7 +25,7 @@ public class MouseController : MonoBehaviour
     {
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0f, 0f, 1f);
     }
-    public void OnLeftClick(Item item, int position, Inventory inventory)
+    public void OnLeftClick(GameObject item, int position, Inventory inventory)
     {
         if(holdedItem == null)
         {
@@ -37,7 +37,7 @@ public class MouseController : MonoBehaviour
             oldInventory = inventory;
             oldPosition = position;
             holdedItem = item;
-            this.spriteRenderer.sprite = item.gameObject.GetComponent<SpriteRenderer>().sprite;
+            this.spriteRenderer.sprite = item.gameObject.GetComponent<Item>().sprite;
             
             return;
         }
@@ -48,11 +48,17 @@ public class MouseController : MonoBehaviour
             holdedItem = null;
             spriteRenderer.sprite = null;
             oldInventory = null;
+            return;
         }
 
+        if (inventory.slots[position].GetComponent<Item>().id == holdedItem.GetComponent<Item>().id)
+        {
+            inventory.addItem(holdedItem);
+            holdedItem = null;
+            spriteRenderer.sprite = null;
+            oldInventory = null;
+            return;
+        }
     }
-    //public void holdItem(Item item)
-    //{
-    //    holdedItem = item;
-    //}
+    
 }

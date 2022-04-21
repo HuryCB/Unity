@@ -112,8 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d676662a6ece0124287e089a4550ef1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptableItem: {fileID: 0}
   id: 1
-  hootbar_item: {fileID: 8542054283771403941, guid: 90dde393dcac9964caf5ae066ea50c44, type: 3}
+  hootbar_item: {fileID: 8542054283771403946, guid: 90dde393dcac9964caf5ae066ea50c44, type: 3}
+  itemButton: {fileID: 8542054283771403946, guid: 90dde393dcac9964caf5ae066ea50c44, type: 3}
   itemType: 0
   stackSize: 0
   currentQuantity: 1

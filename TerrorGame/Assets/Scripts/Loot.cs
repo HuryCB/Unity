@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Loot : MonoBehaviour
 {
-    public Item item;
+    public GameObject item;
     public int chance;
     public bool willDrop = false;
     //public int minQuantity;

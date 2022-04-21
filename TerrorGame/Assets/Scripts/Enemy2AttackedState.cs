@@ -8,10 +8,10 @@ public class Enemy2AttackedState : Enemy2BaseState
     {
         this.enemy = enemy;
 
-        enemy.receiveDamageSound.Play();    
+        enemy.receiveDamageSound.Play();
         //Debug.Log("Attacked State");
         enemy.npcAnimation.SetTrigger("Attacked");
-        
+
     }
 
     public override void ExitState()

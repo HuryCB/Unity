@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
 {
     public bool isFull=false;
     public MouseController mouseController;
-    public Item[] slots;
+    public GameObject[] slots;
     public Image[] hotbar;
     public TMP_Text[] quantityTexts;
     public Sprite defaultInventorySprite;
@@ -21,27 +21,30 @@ public class Inventory : MonoBehaviour
         mouseController = GameObject.Find("###MouseController###").GetComponent<MouseController>();
     }
 
-    public void AddItemInPos(Item item, int i)
+
+    public void AddItemInPos(GameObject item, int i)
     {
         slots[i] = item;
-        hotbar[i].sprite = item.gameObject.GetComponent<SpriteRenderer>().sprite;
-        
+        hotbar[i].sprite = item.gameObject.GetComponent<Item>().sprite;
+        quantityTexts[i].text = slots[i].GetComponent<Item>().currentQuantity.ToString();
     }
-    public void addItem(Item item)
+    public void addItem(GameObject item)
     {
-        Debug.Log(item.currentQuantity);
-        Debug.Log("id do item novo:" + item.id);
-        if (isFull)
-        {
-            return;
-        }
+        //Debug.Log(item.currentQuantity);
+        //Debug.Log("id do item novo:" + item.id);
+        
         var _hasSameType = verifySameObject(item);
 
         if (_hasSameType)
         {
+            //Debug.Log("Mesmo tipo encontrado");
             return;
         }
 
+        if (isFull)
+        {
+            return;
+        }
         var _hasAddedItem = addFirstExemplarOfItem(item);
 
         if (!_hasAddedItem)
@@ -51,35 +54,45 @@ public class Inventory : MonoBehaviour
         
     }
 
-    private bool addFirstExemplarOfItem(Item item)
+    private bool addFirstExemplarOfItem(GameObject item)
     {
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i] == null)
             {
                 slots[i] = item;
-                quantityTexts[i].text = item.currentQuantity.ToString();
-                hotbar[i].sprite = item.gameObject.GetComponent<SpriteRenderer>().sprite;
+                quantityTexts[i].text = slots[i].GetComponent<Item>().currentQuantity.ToString();
+                hotbar[i].sprite = item.gameObject.GetComponent<Item>().sprite;
                 return true;
             }
         }
         return false;
     }
 
-    private bool verifySameObject(Item item)
+    private bool verifySameObject(GameObject item)
     {
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i] == null)
             {
-                break;
+                continue;
             }
-            if (slots[i].id == item.id)
+            if (slots[i].GetComponent<Item>().id == item.GetComponent<Item>().id)
             {
-                Debug.Log("id do item atual:"+slots[i].id);
-                Debug.Log("id do item novo:"+item.id);
-                slots[i].currentQuantity++;
-                quantityTexts[i].text = slots[i].currentQuantity.ToString();
+                //if(slots[i] == item)
+                //{
+                //    Debug.Log("o item é o mesmo");
+                //}
+                //Debug.Log("Encontrou item igual");
+                //Debug.Log("id do item atual:"+slots[i].id);
+                //Debug.Log("id do item novo:"+item.id);
+                slots[i].GetComponent<Item>().addItemQuantityInInventory(item);
+                //slots[i].GetComponent<Item>().currentQuantity+= item.GetComponent<Item>().currentQuantity;
+                //Debug.Log("Chegou aq");
+                //Debug.Log("current " + item.scriptableItem.currentQuantity);
+                //slots[i].currentQuantity+= item.scriptableItem.currentQuantity;
+                quantityTexts[i].text = slots[i].GetComponent<Item>().currentQuantity.ToString();
+                
                 return true;
             }
         }
@@ -99,6 +112,7 @@ public class Inventory : MonoBehaviour
 
     public void OnLeftClick(int pos)
     {
+        Debug.Log("Slot clicado");
         //if (slots[pos] == null)
         //{
         //    return;
@@ -111,8 +125,15 @@ public class Inventory : MonoBehaviour
         {
             return;
         }
-        slots[i].onUse(player);
-        removeItem(i);
+        slots[i].GetComponent<Item>().onUse(player);
+        if(slots[i].GetComponent<Item>().currentQuantity == 0)
+        {
+            removeItem(i);
+            return;
+        }
+        //slots[i].GetComponent<Item>().currentQuantity--;
+        quantityTexts[i].text = slots[i].GetComponent<Item>().currentQuantity.ToString();
+
     }
 
     public void removeItem(int i)
@@ -127,49 +148,7 @@ public class Inventory : MonoBehaviour
     }
     private void Update()
     {
-        useHootBarItem();
+        
     }
-    private void useHootBarItem()
-    {
-        if (Input.GetKeyDown("1"))
-        {
-            useItem(0);
-        }
-        if (Input.GetKeyDown("2"))
-        {
-            useItem(1);
-        }
-        if (Input.GetKeyDown("3"))
-        {
-            useItem(2);
-        }
-        if (Input.GetKeyDown("4"))
-        {
-            useItem(3);
-        }
-        if (Input.GetKeyDown("5"))
-        {
-            useItem(4);
-        }
-        if (Input.GetKeyDown("6"))
-        {
-            useItem(5);
-        }
-        if (Input.GetKeyDown("7"))
-        {
-            useItem(6);
-        }
-        if (Input.GetKeyDown("8"))
-        {
-            useItem(7);
-        }
-        if (Input.GetKeyDown("9"))
-        {
-            useItem(8);
-        }
-        if (Input.GetKeyDown("0"))
-        {
-            useItem(9);
-        }
-    }
+    
 }

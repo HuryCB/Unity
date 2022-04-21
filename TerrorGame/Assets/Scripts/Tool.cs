@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Tool : Item
 {
+   
 
     public override void onUse(Npc2 npc)
     {

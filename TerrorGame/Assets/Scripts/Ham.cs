@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ham : Food
 {
+    public ScriptableFood scriptableFood;
     private void Start()
     {
         id = ItemId.Ham;
@@ -13,8 +14,10 @@ public class Ham : Food
     //new public float sanityAmount = 5;
     public override void onUse(Npc2 npc)
     {
+        currentQuantity--;
         Debug.Log("usando");
         npc.eat(this);
+        scriptableFood.teste();
         //Destroy(this.gameObject);
     }
 

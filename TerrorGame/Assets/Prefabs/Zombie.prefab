@@ -1,5 +1,147 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &330486241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 330486242}
+  - component: {fileID: 330486243}
+  m_Layer: 0
+  m_Name: meatDrop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &330486242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330486241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1222855598}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &330486243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330486241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00df9c51fc2b7c84fa0686160fa206fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 601170766579134687, guid: a540a552438c31c4997d2289dd5db0b6, type: 3}
+  chance: 100
+  willDrop: 0
+  quantity: 2
+--- !u!1 &1222855597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1222855598}
+  - component: {fileID: 1222855599}
+  m_Layer: 0
+  m_Name: ZombieLoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1222855598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222855597}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 330486242}
+  - {fileID: 1757207359}
+  m_Father: {fileID: 87471627653131546}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1222855599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222855597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0a64922076b6934aa904a0b1d864a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootList:
+  - {fileID: 330486243}
+  - {fileID: 1757207360}
+--- !u!1 &1757207358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1757207359}
+  - component: {fileID: 1757207360}
+  m_Layer: 0
+  m_Name: woodDrop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1757207359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757207358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1222855598}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1757207360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757207358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00df9c51fc2b7c84fa0686160fa206fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 631714710632982113, guid: b81756666d246a647ab54fd4b9459a09, type: 3}
+  chance: 50
+  willDrop: 0
+  quantity: 1
 --- !u!1 &87471626796940667
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +525,7 @@ Transform:
   - {fileID: 87471627507811781}
   - {fileID: 8695390158043267192}
   - {fileID: 87471627549682197}
+  - {fileID: 1222855598}
   m_Father: {fileID: 87471627935441602}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -399,22 +542,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 150020257495834106}
-  currentLife: 100
+  currentLife: 10
   maxLife: 100
   damage: 27
   speed: 1.5
-  isFollowing: 0
   canAttack: 0
-  wasAttacked: 0
-  timeToNormalizeBehaviour: 0
   npcAnimation: {fileID: 87471627507811787}
   receiveDamageSound: {fileID: 87471627653131545}
   player: {fileID: 0}
   atkRange: {fileID: 2086733063}
   lookAtPlayer: {fileID: 87471627549682202}
-  isAttacking: 0
   lastAttack: 0
   attackCoolDown: 2
+  dropSystem: {fileID: 1222855599}
 --- !u!61 &87471627653131544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -625,11 +765,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 476df8f2397d67b45945f6dcb67e88b5, type: 3}
---- !u!4 &8695390158043267192 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5435258328847280928, guid: 476df8f2397d67b45945f6dcb67e88b5, type: 3}
-  m_PrefabInstance: {fileID: 3729492728337410904}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &150020257495834106 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3590823837913249442, guid: 476df8f2397d67b45945f6dcb67e88b5, type: 3}
@@ -641,3 +776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff0608dd89c0244a806993a0281d556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &8695390158043267192 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5435258328847280928, guid: 476df8f2397d67b45945f6dcb67e88b5, type: 3}
+  m_PrefabInstance: {fileID: 3729492728337410904}
+  m_PrefabAsset: {fileID: 0}
